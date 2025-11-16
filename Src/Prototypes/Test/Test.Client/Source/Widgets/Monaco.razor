@@ -1,12 +1,8 @@
-﻿@page "/"
-@using BF.Utilities.Extensions
+﻿@using BF.Utilities.Extensions
 @using LMS.Shared.Enums
 @rendermode InteractiveWebAssembly
 
-<PageTitle>Home</PageTitle>
-
 <StandaloneCodeEditor Id="my-editor-id" ConstructionOptions="EditorConstructionOptions"/>
-
 
 @code {
     private StandaloneEditorConstructionOptions EditorConstructionOptions(StandaloneCodeEditor editor)

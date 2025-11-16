@@ -1,5 +1,5 @@
 <Project Sdk="Microsoft.NET.Sdk.Razor">
-  
+
   <ItemGroup>
     <SupportedPlatform Include="browser" />
   </ItemGroup>
@@ -8,7 +8,11 @@
     <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="9.0.0" />
     <PackageReference Include="TailwindMerge.NET" Version="1.2.0"/>
   </ItemGroup>
-  
+
+  <ItemGroup>
+      <TypeScriptCompile Include="wwwroot\libs\types\dotnet-object-type.ts" />
+  </ItemGroup>
+
   <ItemGroup>
     <Content Remove="tsconfig.json" />
     <None Include="tsconfig.json">
@@ -19,7 +23,7 @@
   <ItemGroup>
     <UpToDateCheckInput Remove="SharedImports\_Imports.razor" />
   </ItemGroup>
-  
+
   <Import Project="..\..\.targets\bun\Install.targets" />
   <Import Project="..\..\.targets\bun\Build.targets" />
 

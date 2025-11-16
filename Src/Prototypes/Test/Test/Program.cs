@@ -1,5 +1,5 @@
 using TailwindMerge.Extensions;
-using Test.Components;
+using Test.Source.App;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
