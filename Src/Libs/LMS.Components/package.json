@@ -4,28 +4,15 @@
   "type": "module",
   "main": "index.ts",
   "scripts": {
-    "format": "prettier wwwroot/libs --write",
-    "build": "esbuild ./wwwroot/libs/index.ts --bundle --minify --target=es6 --outfile=wwwroot/index.js && bunx @tailwindcss/cli -i wwwroot/app.css -o wwwroot/app.min.css --minify",
-    "lint": "eslint ./wwwroot/libs/**/*.{ts}"
+    "format": "bunx biome format wwwroot/libs --write",
+    "build": "esbuild wwwroot/libs/index.ts --bundle --minify --target=es6 --outfile=wwwroot/index.js && bunx @tailwindcss/cli -i wwwroot/app.css -o wwwroot/app.min.css --minify",
+    "lint": "bunx biome lint wwwroot/libs/**/*.{ts} --write"
   },
   "devDependencies": {
-    "autoprefixer": "^10.4.22",
+    "@biomejs/biome": "2.3.6",
+    "@tailwindcss/cli": "^4.1.17",
     "esbuild": "^0.27.0",
-    "postcss": "^8.5.6",
-    "postcss-cli": "^11.0.1",
     "tailwindcss": "^4.1.17",
-    "tailwindcss-animate": "^1.0.7",
     "typescript": "^5.9.3"
-  },
-  "optionalDependencies": {
-    "@eslint/js": "^9.39.1",
-    "eslint": "^9.39.1",
-    "eslint-plugin-promise": "^7.2.1",
-    "eslint-plugin-simple-import-sort": "^12.1.1",
-    "eslint-plugin-sonarjs": "^3.0.5",
-    "eslint-plugin-unicorn": "^62.0.0",
-    "globals": "^16.5.0",
-    "prettier": "^3.6.2",
-    "typescript-eslint": "^8.46.4"
   }
 }
