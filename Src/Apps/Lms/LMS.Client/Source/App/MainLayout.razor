@@ -1,0 +1,11 @@
+﻿@using LMS.Client.Source.Widgets.Navbar
+@inherits LayoutComponentBase
+
+<div class="w-full min-h-screen">
+  <div class="w-full grid grid-rows-[auto,1fr]">
+    <Navbar />
+    <main class="size-full overflow-x-hidden p-6">
+      @Body
+    </main>
+  </div>
+</div>

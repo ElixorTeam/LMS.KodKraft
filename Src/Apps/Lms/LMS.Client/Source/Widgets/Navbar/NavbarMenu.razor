@@ -1,0 +1,21 @@
+﻿<div class="flex flex-row select-none w-full p-2 gap-0.5" data-sidebar="menu">
+  @foreach (SidebarItem item in SidebarItems)
+  {
+    <NavbarMenuItem
+      Label="@item.Label"
+      Url="@item.Url"
+      Icon="@item.Icon"
+    />
+  }
+</div>
+
+
+@code{
+  private record SidebarItem(string Label, string Url, string Icon);
+
+  private List<SidebarItem> SidebarItems { get; set; } =
+  [
+    new("Дома", Urls.Home, "a"),
+    new("Задание", Urls.Code, "b")
+  ];
+}

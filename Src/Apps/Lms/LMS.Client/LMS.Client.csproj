@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
+
+  <PropertyGroup>
+    <ServiceWorkerAssetsManifest>service-worker-assets.js</ServiceWorkerAssetsManifest>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="9.0.10" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="9.0.10" PrivateAssets="all" />
+    <PackageReference Include="BlazorMonaco" Version="3.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ServiceWorker Include="wwwroot\service-worker.js" PublishedContent="wwwroot\service-worker.published.js" />
+  </ItemGroup>
+
+  <Import Project="..\..\..\.targets\bun\Install.targets" />
+  <Import Project="..\..\..\.targets\bun\Build.targets" />
+
+  <ItemGroup Label="Setup LMS.Components">
+    <ProjectReference Include="..\..\..\Libs\LMS.Components\LMS.Components.csproj" />
+<!--    <Content Include="..\..\..\Libs\LMS.Components\Shared\_Imports.razor" Link="_Imports.razor" CopyToOutputDirectory="PreserveNewest" />-->
+  </ItemGroup>
+</Project>

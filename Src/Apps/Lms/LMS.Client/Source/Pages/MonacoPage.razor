@@ -1,0 +1,25 @@
+﻿@page "/code"
+@using LMS.Client.Source.Widgets
+
+<h1>Редактор кода</h1>
+
+<!-- Кнопка вне блока редактора -->
+<button class="px-4 py-2 bg-blue-600 text-white rounded-md mb-4 relative z-20" @onclick="ToggleEditor">
+  @(_showEditor ? "Скрыть редактор" : "Показать редактор")
+</button>
+
+<!-- Блок редактора -->
+<div class="@EditorClass relative z-10">
+  <Monaco />
+</div>
+
+@code {
+  private bool _showEditor;
+
+  private void ToggleEditor()
+  {
+    _showEditor = !_showEditor;
+  }
+
+  private string EditorClass => _showEditor ? "block" : "hidden";
+}

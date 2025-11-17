@@ -1,0 +1,24 @@
+﻿@using BlazorMonaco.Editor
+@using LMS.Shared.Enums
+
+<StandaloneCodeEditor Id="my-editor-id" ConstructionOptions="EditorConstructionOptions" CssClass="h-56"/>
+
+@code {
+    private StandaloneEditorConstructionOptions EditorConstructionOptions(StandaloneCodeEditor editor)
+    {
+        return new()
+        {
+            AutomaticLayout = true,
+            Language = LanguageType.Csharp.GetDescription(),
+            GlyphMargin = false,
+            SelectOnLineNumbers = true,
+            ScrollBeyondLastLine = false,
+            HideCursorInOverviewRuler = true,
+            Minimap = new()
+            {
+                Enabled = false,
+            },
+            Value = "using TailwindMerge.Extensions;\nusing Test.Components;\n\nWebApplicationBuilder builder = WebApplication.CreateBuilder(args);\n\nbuilder.Services.AddTailwindMerge();\n\n// Add services to the container.\nbuilder.Services\n    .AddRazorComponents()\n    .AddInteractiveServerComponents()\n    .AddInteractiveWebAssemblyComponents();\n\nWebApplication app = builder.Build();\n\n// Configure the HTTP request pipeline.\nif (app.Environment.IsDevelopment())\n{\n    app.UseWebAssemblyDebugging();\n}\nelse\n{\n    app.UseExceptionHandler(\"/Error\", createScopeForErrors: true);\n    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.\n    app.UseHsts();\n}\n\napp.UseStaticFiles();\n\napp.UseHttpsRedirection();\n\napp.UseAntiforgery();\n\napp.MapStaticAssets();\napp.MapRazorComponents<App>()\n    .AddInteractiveServerRenderMode()\n    .AddInteractiveWebAssemblyRenderMode()\n    .AddAdditionalAssemblies(typeof(Test.Client._Imports).Assembly);\n\napp.Run();"
+        };
+    }
+}
