@@ -21,4 +21,9 @@
     <ProjectReference Include="..\..\..\Libs\LMS.Components\LMS.Components.csproj" />
 <!--    <Content Include="..\..\..\Libs\LMS.Components\Shared\_Imports.razor" Link="_Imports.razor" CopyToOutputDirectory="PreserveNewest" />-->
   </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="wwwroot\libs\index.ts" />
+    <TypeScriptCompile Include="wwwroot\libs\monaco\themes\one-dark-pro.ts" />
+  </ItemGroup>
 </Project>
