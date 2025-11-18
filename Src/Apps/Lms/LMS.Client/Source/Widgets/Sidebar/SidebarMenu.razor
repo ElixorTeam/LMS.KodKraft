@@ -1,0 +1,23 @@
+﻿@using Blazor.Heroicons;
+
+<div class="flex flex-row items-center select-none w-full p-2 gap-4">
+  @foreach (SidebarItem item in SidebarItems)
+  {
+    <SidebarMenuItem
+      Label="@item.Label"
+      Url="@item.Url"
+      Icon="@item.Icon"
+    />
+  }
+</div>
+
+
+@code{
+  private record SidebarItem(string Label, string Url, string Icon);
+
+  private static List<SidebarItem> SidebarItems =>
+  [
+    new("Дома", Urls.Home, HeroiconName.Home),
+    new("Задание", Urls.Code, HeroiconName.CodeBracket)
+  ];
+}

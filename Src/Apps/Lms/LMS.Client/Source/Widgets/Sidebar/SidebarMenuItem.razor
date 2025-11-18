@@ -1,0 +1,41 @@
+﻿@implements IDisposable
+@using Blazor.Heroicons
+
+<div>
+  <a href="@Url" class="@Css.Class(GetIsActivePath(Url) ? "text-red-500" : "text-gray-400", "m-2", "flex items-center relative h-14 gap-2")">
+    <Heroicon
+      Name="@Icon"
+      Type="HeroiconType.Outline"
+      class="size-[1.1rem]"/>
+    <span class="truncate">
+      @Label
+    </span>
+    <div class="@Css.Class("absolute inset-x-0 bottom-0 h-1 rounded-t-md", GetIsActivePath(Url) ? "bg-red-500" : "bg-gray-400")"/>
+  </a>
+</div>
+
+@code {
+  [Inject] private NavigationManager NavigationManager { get; set; } = null!;
+
+  [Parameter, EditorRequired] public string Url { get; set; } = string.Empty;
+  [Parameter, EditorRequired] public string Label { get; set; } = string.Empty;
+  [Parameter, EditorRequired] public string Icon { get; set; } = HeroiconName.Home;
+
+  protected override void OnInitialized()
+  {
+    NavigationManager.LocationChanged += HandleLocationChanged;
+  }
+
+  private bool GetIsActivePath(string relativePath)
+  {
+    string currentUri = NavigationManager.Uri;
+    string uriToCheck = new Uri(new(NavigationManager.BaseUri), relativePath).ToString();
+    bool startsWithFullPath = currentUri.StartsWith(uriToCheck, StringComparison.OrdinalIgnoreCase);
+    bool isExactMatchOrSubpath = currentUri.Length >= uriToCheck.Length &&
+                                 (currentUri.Length == uriToCheck.Length || currentUri[uriToCheck.Length] == '/');
+    return startsWithFullPath && isExactMatchOrSubpath;
+  }
+  private void HandleLocationChanged(object? sender, LocationChangedEventArgs e) => StateHasChanged();
+
+  public void Dispose() => NavigationManager.LocationChanged -= HandleLocationChanged;
+}
