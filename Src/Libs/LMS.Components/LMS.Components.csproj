@@ -12,6 +12,7 @@
 
   <ItemGroup>
       <TypeScriptCompile Include="wwwroot\libs\types\dotnet-object-type.ts" />
+      <TypeScriptCompile Include="wwwroot\libs\utils\theme-utils.ts" />
   </ItemGroup>
 
   <ItemGroup>
@@ -19,10 +20,6 @@
     <None Include="tsconfig.json">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </None>
-  </ItemGroup>
-
-  <ItemGroup>
-    <UpToDateCheckInput Remove="SharedImports\_Imports.razor" />
   </ItemGroup>
 
   <Import Project="..\..\.targets\bun\Install.targets" />
