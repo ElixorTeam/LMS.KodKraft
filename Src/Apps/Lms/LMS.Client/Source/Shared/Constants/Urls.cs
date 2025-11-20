@@ -1,8 +1,9 @@
-﻿namespace LMS.Client.Source.Shared.Constants;
-
-public static class Urls
+﻿namespace LMS.Client.Source.Shared.Constants
 {
-    public const string Home = "/";
-    public const string Code = "/code";
-    public const string NotFound = "/404";
+    public static class Urls
+    {
+        public const string Main = "/main";
+        public const string Courses = "/courses";
+        public const string NotFound = "/404";
+    }
 }

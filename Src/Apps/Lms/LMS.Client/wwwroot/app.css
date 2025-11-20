@@ -1,44 +1,39 @@
 @import "tailwindcss";
 
 :root {
-  /*--background: oklch(0.9728 0.0057 264.53);*/
-  --background: oklch(100% 0 0);
-  --foreground: oklch(0.145 0 0);
+  --background: rgb(255, 255, 255);
+  --foreground: rgb(9, 9, 10);
 
-  --primary: oklch(0.5246 0.0171 285.8);
-  --primary-foreground: oklch(0.985 0 0);
+  --primary: rgb(28, 28, 28);
+  --primary-foreground: rgb(250, 250, 250);
 
-  --secondary: oklch(0.6348 0.1966 33.2);
-  --secondary-foreground: oklch(0.205 0 0);
+  --secondary: rgb(255, 98, 0);
+  --secondary-foreground: rgb(28, 28, 28);
 
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
+  --muted: rgb(244, 244, 244);
+  --muted-foreground: rgb(117, 117, 117);
+  /*--navbar: oklch(1 1 1);*/
 
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.577 0.245 27.325);
+  /*--background: oklch(0.986 0 0);*/
+  /*--foreground: oklch(0.145 0 0);*/
 
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
+  /*--primary: oklch(0.5246 0.0171 285.8);*/
+  /*--primary-foreground: oklch(0.985 0 0);*/
+
+  /*--secondary: oklch(0.6348 0.1966 33.2);*/
+  /*--secondary-foreground: oklch(0.205 0 0);*/
+
+  /*--muted: oklch(0.97 0 0);*/
+  /*--muted-foreground: oklch(0.556 0 0);*/
+
+  /*--destructive: oklch(0.577 0.245 27.325);*/
+  /*--destructive-foreground: oklch(0.577 0.245 27.325);*/
+
+  /*--border: oklch(0.922 0 0);*/
+  /*--input: oklch(0.922 0 0);*/
 }
 
 .dark {
-  --background: oklch(100% 0 0);
-  --foreground: oklch(0.985 0 0);
-
-  --primary: oklch(0.5246 0.0171 285.8);
-  --primary-foreground: oklch(0.205 0 0);
-
-  --secondary: oklch(0.6348 0.1966 33.2);
-  --secondary-foreground: oklch(0.985 0 0);
-
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-
-  --destructive: oklch(0.396 0.141 25.723);
-  --destructive-foreground: oklch(0.637 0.237 25.331);
-
-  --border: oklch(0.269 0 0);
-  --input: oklch(0.269 0 0);
 }
 
 @theme inline {
@@ -56,9 +51,9 @@
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
 
-  --color-destructive: var(--destructive);
-  --color-destructive-foreground: var(--destructive-foreground);
+  /*--color-destructive: var(--destructive);*/
+  /*--color-destructive-foreground: var(--destructive-foreground);*/
 
-  --color-border: var(--border);
-  --color-input: var(--input);
+  /*--color-border: var(--border);*/
+  /*--color-input: var(--input);*/
 }

@@ -1,0 +1,5 @@
+﻿@code {
+  [Inject] private IJSRuntime JsRuntime { get; set; } = null!;
+
+  private async Task SetTheme(string theme) => await JsRuntime.InvokeVoidAsync("switchTheme", theme);
+}

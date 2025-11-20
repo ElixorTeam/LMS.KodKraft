@@ -1,6 +1,6 @@
 ﻿@using Blazor.Heroicons;
 
-<div class="flex flex-row items-center select-none w-full px-2 gap-4 border-b border-b-primary/50">
+<div class="flex flex-row items-center select-none w-full px-2 gap-4">
   @foreach (SidebarItem item in SidebarItems)
   {
     <SidebarMenuItem
@@ -17,7 +17,7 @@
 
   private static List<SidebarItem> SidebarItems =>
   [
-    new("Дома", Urls.Home, HeroiconName.Home),
-    new("Задание", Urls.Code, HeroiconName.CodeBracket)
+    new("Главная", Urls.Main, HeroiconName.Home),
+    new("Группы", Urls.Courses, HeroiconName.AcademicCap)
   ];
 }
