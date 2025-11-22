@@ -20,6 +20,7 @@
 
   <ItemGroup Label="Setup LMS.Components">
     <ProjectReference Include="..\..\..\Libs\LMS.Components\LMS.Components.csproj" />
+    <ProjectReference Include="..\LMS.Client.Models\LMS.Client.Models.csproj" />
 <!--    <Content Include="..\..\..\Libs\LMS.Components\Shared\_Imports.razor" Link="_Imports.razor" CopyToOutputDirectory="PreserveNewest" />-->
   </ItemGroup>
 

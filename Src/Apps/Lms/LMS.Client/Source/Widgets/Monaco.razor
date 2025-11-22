@@ -1,5 +1,5 @@
 ﻿@using BlazorMonaco.Editor
-@using LMS.Shared.Enums
+@using LMS.Shared.Types
 
 <StandaloneCodeEditor Id="my-editor-id" ConstructionOptions="EditorConstructionOptions" CssClass="h-56"/>
 
@@ -9,7 +9,7 @@
         return new()
         {
             AutomaticLayout = true,
-            Language = LanguageType.Csharp.GetDescription(),
+            Language = ItLanguage.Csharp.GetDescription(),
             GlyphMargin = false,
             SelectOnLineNumbers = true,
             ScrollBeyondLastLine = false,

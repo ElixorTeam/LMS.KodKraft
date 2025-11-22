@@ -1,11 +1,11 @@
 ﻿namespace LMS.Components.Source.UI.Button;
 
-public enum ButtonVariantType
+public enum ButtonVariant
 {
     Default
 }
 
-public enum ButtonSizeType
+public enum ButtonSize
 {
     Default,
     Icon

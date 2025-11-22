@@ -1,0 +1,10 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    
+    <ItemGroup>
+        <PackageReference Include="Refit" Version="8.0.0"/>
+        <PackageReference Include="FluentValidation" Version="12.1.0" />
+        <PackageReference Include="Microsoft.AspNetCore.Authorization" Version="9.0.11" />
+        <PackageReference Include="Microsoft.Extensions.Localization.Abstractions" Version="9.0.11"/>
+    </ItemGroup>
+
+</Project>

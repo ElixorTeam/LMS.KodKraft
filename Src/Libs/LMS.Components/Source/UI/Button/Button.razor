@@ -34,12 +34,12 @@ else
   /// <summary>
   /// Defines the visual style of the button.
   /// </summary>
-  [Parameter] public ButtonVariantType Variant { get; set; } = ButtonVariantType.Default;
+  [Parameter] public ButtonVariant Variant { get; set; } = ButtonVariant.Default;
 
   /// <summary>
   /// Defines the size of the button.
   /// </summary>
-  [Parameter] public ButtonSizeType Size { get; set; } = ButtonSizeType.Default;
+  [Parameter] public ButtonSize Size { get; set; } = ButtonSize.Default;
 
   /// <summary>
   /// Defines the HTML type attribute for the button element.
@@ -70,22 +70,22 @@ else
 
   private string VariantClasses => Variant switch
   {
-    ButtonVariantType.Default => "bg-primary text-primary-foreground hover:bg-primary/90",
-    // ButtonVariantType.Destructive => "bg-destructive text-destructive-foreground hover:bg-destructive/90",
-    // ButtonVariantType.Outline => "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
-    // ButtonVariantType.Secondary => "bg-secondary text-secondary-foreground hover:bg-secondary/80",
-    // ButtonVariantType.Ghost => "hover:bg-accent hover:text-accent-foreground",
-    // ButtonVariantType.Link => "text-primary underline-offset-4 hover:underline",
+    ButtonVariant.Default => "bg-primary text-primary-foreground hover:bg-primary/90",
+    // ButtonVariant.Destructive => "bg-destructive text-destructive-foreground hover:bg-destructive/90",
+    // ButtonVariant.Outline => "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
+    // ButtonVariant.Secondary => "bg-secondary text-secondary-foreground hover:bg-secondary/80",
+    // ButtonVariant.Ghost => "hover:bg-accent hover:text-accent-foreground",
+    // ButtonVariant.Link => "text-primary underline-offset-4 hover:underline",
     _ => string.Empty
   };
 
   private string SizeClasses => Size switch
   {
-    ButtonSizeType.Default => "h-9 px-4 py-2",
-    // ButtonSizeType.Small => "h-8 rounded-md px-3 text-xs",
-    // ButtonSizeType.Large => "h-10 rounded-md px-8",
-    // ButtonSizeType.Full => "size-full",
-    ButtonSizeType.Icon => "h-9 w-9",
+    ButtonSize.Default => "h-9 px-4 py-2",
+    // ButtonSize.Small => "h-8 rounded-md px-3 text-xs",
+    // ButtonSize.Large => "h-10 rounded-md px-8",
+    // ButtonSize.Full => "size-full",
+    ButtonSize.Icon => "h-9 w-9",
     _ => string.Empty
   };
 

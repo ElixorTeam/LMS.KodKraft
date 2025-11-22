@@ -1,9 +1,13 @@
 <Solution>
   <Folder Name="/Apps/">
+    <Project Path="Src/Apps/Lms/LMS.Client.Models/LMS.Client.Models.csproj" />
     <Project Path="Src/Apps/Lms/LMS.Client/LMS.Client.csproj" />
   </Folder>
   <Folder Name="/Libs/">
     <Project Path="Src/Libs/LMS.Shared/LMS.Shared.csproj" />
     <Project Path="Src/Libs/LMS.Components/LMS.Components.csproj" />
+  </Folder>
+  <Folder Name="/Tests/">
+    <Project Path="Src/Tests/LMS.Architecture.Tests/LMS.Architecture.Tests.csproj" />
   </Folder>
 </Solution>

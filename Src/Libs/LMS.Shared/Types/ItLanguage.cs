@@ -1,6 +1,6 @@
-﻿namespace LMS.Shared.Enums;
+﻿namespace LMS.Shared.Types;
 
-public enum LanguageType
+public enum ItLanguage
 {
     [Description("csharp")]
     Csharp,
