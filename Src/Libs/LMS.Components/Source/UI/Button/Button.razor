@@ -82,10 +82,10 @@ else
   private string SizeClasses => Size switch
   {
     ButtonSize.Default => "h-9 px-4 py-2",
-    // ButtonSize.Small => "h-8 rounded-md px-3 text-xs",
-    // ButtonSize.Large => "h-10 rounded-md px-8",
-    // ButtonSize.Full => "size-full",
     ButtonSize.Icon => "h-9 w-9",
+    ButtonSize.Small => "h-8 rounded-md px-3 text-xs",
+    ButtonSize.Large => "h-10 rounded-md px-8",
+    ButtonSize.Full => "size-full",
     _ => string.Empty
   };
 

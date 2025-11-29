@@ -35,6 +35,7 @@
                                  (currentUri.Length == uriToCheck.Length || currentUri[uriToCheck.Length] == '/');
     return startsWithFullPath && isExactMatchOrSubpath;
   }
+
   private void HandleLocationChanged(object? sender, LocationChangedEventArgs e) => StateHasChanged();
 
   public void Dispose() => NavigationManager.LocationChanged -= HandleLocationChanged;

@@ -2,13 +2,21 @@
 
 public enum ButtonVariant
 {
-    Default
+    Default,
+    Destructive,
+    Outline,
+    Secondary,
+    Ghost,
+    Link
 }
 
 public enum ButtonSize
 {
     Default,
-    Icon
+    Icon,
+    Small,
+    Large,
+    Full
 }
 
 public enum ButtonType

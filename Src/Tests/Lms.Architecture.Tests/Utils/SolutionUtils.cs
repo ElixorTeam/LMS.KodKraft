@@ -37,12 +37,11 @@ public static class SolutionUtils
             try
             {
                 string dll = FindAssemblyForProject(csproj);
-
                 result.Add(projectName, Assembly.LoadFrom(dll));
             }
             catch
             {
-                // ок, проект мог быть не собран — игнорируем
+                // pass
             }
         }
 

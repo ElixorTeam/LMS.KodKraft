@@ -1,6 +1,6 @@
 ﻿namespace LMS.Client.Source.Features.ThemeSwitcher;
 
-public enum ThemeType
+public enum Theme
 {
     [Description("light")]
     Light,
