@@ -1,13 +1,13 @@
 using LMS.Components.Client.Source.App;
+using LMS.Components.Extensions;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
-using TailwindMerge.Extensions;
 
 WebAssemblyHostBuilder builder = WebAssemblyHostBuilder.CreateDefault(args);
 
-builder.Services.
-    AddWMBOS().
-    AddTailwindMerge();
+builder.Services
+    .AddWMBOS()
+    .AddLmsComponents();
 
 builder.RootComponents.Add<App>("#app");
 builder.RootComponents.Add<HeadOutlet>("head::after");

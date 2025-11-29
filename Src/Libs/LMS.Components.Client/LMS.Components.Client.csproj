@@ -11,7 +11,12 @@
     </ItemGroup>
 
     <ItemGroup>
+      <AdditionalFiles Include="Source\Features\ThemeSwitcher\ThemeSwitcher.razor" />
       <AdditionalFiles Include="Source\Pages\Home.razor" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="Source\Shared\Features\ThemeSwitcher\ThemeSwitcher.razor" />
     </ItemGroup>
 
     <Import Project="..\..\.targets\bun\Install.targets" />

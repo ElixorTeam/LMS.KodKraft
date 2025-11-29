@@ -1,0 +1,18 @@
+﻿@using Blazor.Heroicons.Outline
+@using LMS.Components.Source.UI.Button
+
+<Button
+  id="theme-button"
+  Variant="@ButtonVariant.Secondary"
+  Size="@ButtonSize.Icon"
+  OnClick="@ToggleTheme"
+>
+  <SunIcon class="size-6 dark:hidden"/>
+  <MoonIcon class="size-6 hidden dark:block"/>
+</Button>
+
+@code {
+  [Inject] private IJSRuntime JsRuntime { get; set; } = null!;
+
+  private async Task ToggleTheme() => await JsRuntime.InvokeVoidAsync("toggleTheme");
+}
