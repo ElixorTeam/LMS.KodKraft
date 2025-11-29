@@ -17,3 +17,4 @@ generated_code = true
 
 [**.{html,css,scss,js,cshtml,razor,json}]
 indent_size = 2
+tab_width = 2

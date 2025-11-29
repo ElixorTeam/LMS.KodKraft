@@ -1,0 +1,21 @@
+﻿@using LMS.Components.Client.Source.Shared.UI.View
+@using LMS.Components.Source.UI.Button
+@attribute [Route($"{Urls.Button}")]
+
+<ViewHeader Title="Button" />
+
+<h1>Variants</h1>
+<div class="flex gap-1 mt-2 ">
+  @foreach (ButtonVariant variant in Enum.GetValues<ButtonVariant>())
+  {
+    <Button Variant="variant">@variant.GetDescription()</Button>
+  }
+</div>
+
+<h1>Sizes</h1>
+<div class="flex gap-1 mt-2 ">
+  @foreach (ButtonSize size in Enum.GetValues<ButtonSize>())
+  {
+    <Button Size="size">@size.GetDescription()</Button>
+  }
+</div>

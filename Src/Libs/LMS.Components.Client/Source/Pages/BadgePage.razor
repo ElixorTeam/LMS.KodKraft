@@ -1,0 +1,13 @@
+﻿@using LMS.Components.Client.Source.Shared.UI.View
+@using LMS.Components.Source.UI.Badge
+@attribute [Route($"{Urls.Badge}")]
+
+<ViewHeader Title="Badge" />
+
+<h1>Variants</h1>
+<div class="flex gap-1 mt-2 ">
+  @foreach (BadgeVariant variant in Enum.GetValues<BadgeVariant>())
+  {
+    <Badge Variant="variant">@variant.GetDescription()</Badge>
+  }
+</div>
