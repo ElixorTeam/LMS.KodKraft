@@ -2,10 +2,10 @@
 
 public static class Urls
 {
-    public const string Home = "/";
-    public const string Button = "/button";
-    public const string Badge = "/badge";
-    public const string Other = "/other";
-    public const string Color = "/color";
-    public const string Accordion = "/accordion";
+    public const string Home = "";
+    public const string Button = "button";
+    public const string Badge = "badge";
+    public const string Other = "other";
+    public const string Color = "color";
+    public const string Accordion = "accordion";
 }
