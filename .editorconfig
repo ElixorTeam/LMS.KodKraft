@@ -15,6 +15,6 @@ trim_trailing_whitespace = true
 [**/{Migrations}/**]
 generated_code = true
 
-[**.{html,css,scss,js,cshtml,razor,json}]
+[**.{html,css,scss,js,cshtml,razor,json,yml}]
 indent_size = 2
 tab_width = 2

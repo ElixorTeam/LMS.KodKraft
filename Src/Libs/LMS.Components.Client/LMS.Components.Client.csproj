@@ -3,6 +3,7 @@
     <ItemGroup>
         <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="9.0.11"/>
         <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="9.0.11" PrivateAssets="all"/>
+        <PackageReference Include="PublishSPAforGitHubPages.Build" Version="3.0.3" />
         <PackageReference Include="WMBlazorOverlayScrollbars" Version="1.0.0" />
     </ItemGroup>
 
