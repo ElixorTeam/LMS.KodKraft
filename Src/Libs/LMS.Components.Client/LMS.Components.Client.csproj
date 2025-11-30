@@ -20,7 +20,7 @@
       <_ContentIncludedByDefault Remove="Source\Shared\Features\ThemeSwitcher\ThemeSwitcher.razor" />
     </ItemGroup>
 
-    <Import Project="..\..\.targets\bun\Install.targets" Condition="'$(PublishDir)' == ''" />
-    <Import Project="..\..\.targets\bun\Build.targets"   Condition="'$(PublishDir)' == ''" />
+    <Import Project="..\..\.targets\bun\Install.targets" />
+    <Import Project="..\..\.targets\bun\Build.targets" />
 
 </Project>
