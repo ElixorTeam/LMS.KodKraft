@@ -29,6 +29,7 @@ public sealed partial class SidebarMenu : ComponentBase
         new("Сomponents", HeroiconName.RectangleStack, [
             new("Button", Urls.Button),
             new("Badge", Urls.Badge),
+            new("Accordion", Urls.Accordion),
             new("Other", Urls.Other)
         ]),
     ];
