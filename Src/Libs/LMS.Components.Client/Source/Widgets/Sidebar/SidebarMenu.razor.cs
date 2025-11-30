@@ -23,7 +23,10 @@ public sealed partial class SidebarMenu : ComponentBase
 
     private IEnumerable<MenuSection> CreateNavMenus() =>
     [
-        new("Сomponents", HeroiconName.ComputerDesktop, [
+        new("Foundation", HeroiconName.Swatch, [
+            new("Colors", Urls.Color),
+        ]),
+        new("Сomponents", HeroiconName.RectangleStack, [
             new("Button", Urls.Button),
             new("Badge", Urls.Badge),
             new("Other", Urls.Other)

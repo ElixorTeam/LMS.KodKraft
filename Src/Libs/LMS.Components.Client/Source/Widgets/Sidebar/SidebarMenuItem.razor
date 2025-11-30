@@ -21,17 +21,13 @@
     </div>
     <ChevronRightIcon class="@Css.Class("peer size-4 transition-transform shrink-0", IsOpened ? "rotate-90" : "")" />
   </button>
-  <ul class="@Css.Class("flex flex-col border-s mx-4 px-2.5 transition-colors", IsOpened ? "visible py-0.5" : "invisible h-0 overflow-hidden", GetIsAnyActive() ? "border-s-accent-foreground/[.4]" : "")">
+  <ul class="@Css.Class("flex flex-col border-s mx-4 px-2.5 transition-colors", IsOpened ? "visible py-0.5" : "invisible h-0 overflow-hidden", GetIsAnyActive() ? "border-s-accent-foreground/4" : "")">
     @foreach (NavMenuItemModel item in Items)
     {
       <li>
-        <a href="@item.Link">
-          <button
-            type="button"
-            class="@Css.Class("px-3 py-1.5 w-full h-8 flex text-primary items-center truncate transition-colors rounded-md", GetIsActivePath(item.Link) ?
-                     "font-normal bg-secondary" : "hover:bg-secondary/[.5]")">
+        <a href="@item.Link" class="@Css.Class("px-3 py-1.5 w-full h-8 flex text-primary items-center truncate " +
+                                               "transition-colors rounded-md", GetIsActivePath(item.Link) ? "font-normal bg-secondary" : "hover:bg-secondary/5")">
             @item.Name
-          </button>
         </a>
       </li>
     }

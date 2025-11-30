@@ -1,0 +1,25 @@
+﻿@using LMS.Components.Client.Source.Shared.UI.View
+@attribute [Route($"{Urls.Color}")]
+
+<ViewHeader Title="Сolor" />
+
+<div class="grid gap-4 grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+
+  @foreach (string c in _colors)
+  {
+    <div class="@GetClasses(c)">
+      @c.Capitalize()
+    </div>
+  }
+
+</div>
+
+@code {
+  private readonly string[] _colors =
+  [
+    "primary", "secondary", "muted", "destructive", "accent", "card", "popover",
+  ];
+
+  private static string GetClasses(string color) => $"h-16 rounded-lg border flex items-center justify-center " +
+                                                    $"p-4 text-center bg-{color} text-{color}-foreground";
+}
