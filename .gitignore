@@ -3,9 +3,6 @@
 .idea/
 .vscode/
 .configs/
-# CSS
-*.min.css
-*\index.js
 
 # Visual Studio 2017 auto generated files
 Generated\ Files/
