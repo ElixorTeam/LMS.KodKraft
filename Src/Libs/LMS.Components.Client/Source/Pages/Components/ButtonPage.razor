@@ -8,9 +8,9 @@
   <div>
     <h1 class="text-xl">Variants</h1>
     <div class="flex flex-wrap gap-2 mt-3">
-      @foreach (ButtonVariant variant in Enum.GetValues<ButtonVariant>())
+      @foreach (BtnKind variant in Enum.GetValues<BtnKind>())
       {
-        <Button Variant="variant">@variant.GetDescription()</Button>
+        <Button Kind="variant">@variant.GetDescription()</Button>
       }
     </div>
   </div>
@@ -18,9 +18,9 @@
   <div>
     <h1 class="text-xl">Variants with Disabled</h1>
     <div class="flex flex-wrap gap-2 mt-3">
-      @foreach (ButtonVariant variant in Enum.GetValues<ButtonVariant>())
+      @foreach (BtnKind variant in Enum.GetValues<BtnKind>())
       {
-        <Button Variant="variant" Disabled>@variant.GetDescription()</Button>
+        <Button Kind="variant" Disabled>@variant.GetDescription()</Button>
       }
     </div>
   </div>
@@ -28,7 +28,7 @@
   <div>
     <h1 class="text-xl">Sizes</h1>
     <div class="flex flex-wrap gap-2 mt-3">
-      @foreach (ButtonSize size in Enum.GetValues<ButtonSize>())
+      @foreach (BtnSize size in Enum.GetValues<BtnSize>())
       {
         <Button Size="size">@size.GetDescription()</Button>
       }

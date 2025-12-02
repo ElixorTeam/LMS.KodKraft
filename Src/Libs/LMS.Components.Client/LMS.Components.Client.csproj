@@ -1,5 +1,5 @@
 <Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
-    
+
     <ItemGroup>
         <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="9.0.11"/>
         <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="9.0.11" PrivateAssets="all"/>
@@ -9,11 +9,6 @@
 
     <ItemGroup Label="Setup LMS.Components">
         <ProjectReference Include="..\LMS.Components\LMS.Components.csproj" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <AdditionalFiles Include="Source\Features\ThemeSwitcher\ThemeSwitcher.razor" />
-      <AdditionalFiles Include="Source\Pages\Home.razor" />
     </ItemGroup>
 
     <ItemGroup>

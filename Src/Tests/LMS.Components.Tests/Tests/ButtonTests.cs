@@ -12,10 +12,10 @@ public class ButtonTests : BunitContext
     }
 
     [Theory]
-    [InlineData(ButtonType.Button, "button")]
-    [InlineData(ButtonType.Reset, "reset")]
-    [InlineData(ButtonType.Submit, "submit")]
-    public void HtmlType_AppliedCorrectly(ButtonType type, string expectedHtmlType)
+    [InlineData(BtnType.Button, "button")]
+    [InlineData(BtnType.Reset, "reset")]
+    [InlineData(BtnType.Submit, "submit")]
+    public void HtmlType_AppliedCorrectly(BtnType type, string expectedHtmlType)
     {
         // Arrange
         IRenderedComponent<Button> component = Render<Button>(parameters => parameters

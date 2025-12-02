@@ -6,8 +6,8 @@
 
 <h1>Variants</h1>
 <div class="flex gap-1 mt-2 ">
-  @foreach (BadgeVariant variant in Enum.GetValues<BadgeVariant>())
+  @foreach (BadgeKind variant in Enum.GetValues<BadgeKind>())
   {
-    <Badge Variant="variant">@variant.GetDescription()</Badge>
+    <Badge Kind="variant">@variant.GetDescription()</Badge>
   }
 </div>

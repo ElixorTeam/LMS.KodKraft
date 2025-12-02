@@ -3,6 +3,7 @@
 public static class Urls
 {
     public const string Home = "";
+    public const string Tab = "tab";
     public const string Button = "button";
     public const string Badge = "badge";
     public const string Other = "other";

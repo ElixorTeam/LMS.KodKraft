@@ -22,5 +22,5 @@ public abstract class LmsComponentBase : ComponentBase
     /// </summary>
     [Parameter(CaptureUnmatchedValues = true)] public virtual IReadOnlyDictionary<string, object>? AdditionalAttributes { get; set; }
 
-    protected string? ClassMerge(params string?[] classes) => TwMerge.Merge(classes);
+    protected string ClassMerge(params string?[] classes) => TwMerge.Merge(classes) ?? string.Empty;
 }

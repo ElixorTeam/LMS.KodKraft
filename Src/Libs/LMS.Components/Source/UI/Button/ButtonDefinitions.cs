@@ -1,6 +1,6 @@
 ﻿namespace LMS.Components.Source.UI.Button;
 
-public enum ButtonVariant
+public enum BtnKind
 {
     Default,
     Destructive,
@@ -10,7 +10,7 @@ public enum ButtonVariant
     Link
 }
 
-public enum ButtonSize
+public enum BtnSize
 {
     Default,
     Icon,
@@ -19,7 +19,7 @@ public enum ButtonSize
     Full
 }
 
-public enum ButtonType
+public enum BtnType
 {
     Button,
     Reset,

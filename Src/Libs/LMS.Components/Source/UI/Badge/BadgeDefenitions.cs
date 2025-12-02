@@ -1,6 +1,6 @@
 namespace LMS.Components.Source.UI.Badge;
 
-public enum BadgeVariant
+public enum BadgeKind
 {
     Default,
     Destructive,

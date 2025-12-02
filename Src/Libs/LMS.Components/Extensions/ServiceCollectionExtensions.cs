@@ -1,3 +1,4 @@
+using LMS.Components.Source.Helper;
 using Microsoft.Extensions.DependencyInjection;
 using TailwindMerge.Extensions;
 
@@ -8,6 +9,7 @@ public static class ServiceCollectionExtensions
     public static IServiceCollection AddLmsComponents(this IServiceCollection services)
     {
         services.AddTailwindMerge();
+        services.AddTransient<PageHelper>();
         return services;
     }
 }

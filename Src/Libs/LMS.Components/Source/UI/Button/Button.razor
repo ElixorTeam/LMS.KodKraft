@@ -34,17 +34,17 @@ else
   /// <summary>
   /// Defines the visual style of the button.
   /// </summary>
-  [Parameter] public ButtonVariant Variant { get; set; } = ButtonVariant.Default;
+  [Parameter] public BtnKind Kind { get; set; } = BtnKind.Default;
 
   /// <summary>
   /// Defines the size of the button.
   /// </summary>
-  [Parameter] public ButtonSize Size { get; set; } = ButtonSize.Default;
+  [Parameter] public BtnSize Size { get; set; } = BtnSize.Default;
 
   /// <summary>
   /// Defines the HTML type attribute for the button element.
   /// </summary>
-  [Parameter] public ButtonType Type { get; set; } = ButtonType.Button;
+  [Parameter] public BtnType Type { get; set; } = BtnType.Button;
 
   /// <summary>
   /// Callback executed when the user clicks on trigger.
@@ -64,35 +64,38 @@ else
   /// </remarks>
   [Parameter] public string Link { get; set; } = string.Empty;
 
-  private string? ButtonClasses => ClassMerge(BaseClasses, VariantClasses, SizeClasses, Class);
+  private string ButtonClasses => ClassMerge(BaseClasses, KindClasses, SizeClasses, Class);
 
   private static string BaseClasses => "inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors disabled:pointer-events-none disabled:opacity-5 select-none";
 
-  private string VariantClasses => Variant switch
+  private string KindClasses => Kind switch
   {
-    ButtonVariant.Default => "bg-primary text-primary-foreground hover:bg-primary/90",
-    ButtonVariant.Destructive => "bg-destructive text-destructive-foreground hover:bg-destructive/90",
-    ButtonVariant.Outline => "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
-    ButtonVariant.Secondary => "bg-secondary text-secondary-foreground hover:bg-secondary/80",
-    ButtonVariant.Ghost => "hover:bg-accent hover:text-accent-foreground",
-    ButtonVariant.Link => "text-primary underline-offset-4 hover:underline",
+    BtnKind.Default => KindCssFromColor("primary"),
+    BtnKind.Secondary => KindCssFromColor("secondary"),
+    BtnKind.Destructive => KindCssFromColor("destructive"),
+    BtnKind.Outline => "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
+    BtnKind.Ghost => "hover:bg-accent hover:text-accent-foreground",
+    BtnKind.Link => "text-primary underline-offset-4 hover:underline",
     _ => string.Empty
   };
 
+  private static string KindCssFromColor(string color) =>
+    $"bg-{color} text-{color}-foreground hover:bg-{color}/80";
+
   private string SizeClasses => Size switch
   {
-    ButtonSize.Default => "h-9 px-4 py-2",
-    ButtonSize.Icon => "h-9 w-9",
-    ButtonSize.Small => "h-8 rounded-md px-3 text-xs",
-    ButtonSize.Large => "h-10 rounded-md px-8",
-    ButtonSize.Full => "size-full",
+    BtnSize.Default => "h-9 px-4 py-2",
+    BtnSize.Icon => "h-9 w-9",
+    BtnSize.Small => "h-8 rounded-md px-3 text-xs",
+    BtnSize.Large => "h-10 rounded-md px-8",
+    BtnSize.Full => "size-full",
     _ => string.Empty
   };
 
   private string HtmlType => Type switch
   {
-    ButtonType.Reset => "reset",
-    ButtonType.Submit => "submit",
+    BtnType.Reset => "reset",
+    BtnType.Submit => "submit",
     _ => "button"
   };
 }

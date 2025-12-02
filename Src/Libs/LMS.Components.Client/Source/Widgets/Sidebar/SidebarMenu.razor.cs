@@ -30,6 +30,7 @@ public sealed partial class SidebarMenu : ComponentBase
             new("Button", Urls.Button),
             new("Badge", Urls.Badge),
             new("Accordion", Urls.Accordion),
+            new("Tabs", Urls.Tab),
             new("Other", Urls.Other)
         ]),
     ];
