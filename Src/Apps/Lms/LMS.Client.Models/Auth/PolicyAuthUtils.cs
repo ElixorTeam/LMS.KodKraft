@@ -14,19 +14,19 @@ public static class PolicyAuthUtils
 
         options.AddPolicy(Policy.Teacher, builder =>
             builder.RequireAssertion(x =>
-                x.User.HasRole(Role.Teacher)
+                x.User.HasRole(Role.Teacher, Role.Admin)
             )
         );
 
         options.AddPolicy(Policy.Parent, builder =>
             builder.RequireAssertion(x =>
-                x.User.HasRole(Role.Parent)
+                x.User.HasRole(Role.Parent, Role.Admin)
             )
         );
 
         options.AddPolicy(Policy.Pupil, builder =>
             builder.RequireAssertion(x =>
-                x.User.HasRole(Role.Pupil)
+                x.User.HasRole(Role.Pupil, Role.Admin)
             )
         );
     }

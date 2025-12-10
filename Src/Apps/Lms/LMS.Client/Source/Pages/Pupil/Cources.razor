@@ -4,14 +4,28 @@
 @using Microsoft.AspNetCore.Components.WebAssembly.Authentication
 @attribute [Authorize]
 @inject NavigationManager Navigation
-
+@inject AuthenticationStateProvider AuthStateProvider
 
 <Button OnClick="@BeginSignOut" Kind="BtnKind.Link">Выйти</Button>
 
 <h1>Редактор кода</h1>
-<Monaco />
+
+@if (isAdmin)
+{
+  <Monaco />
+}
+
 
 @code {
+  bool isAdmin;
+
+  protected override async Task OnInitializedAsync()
+  {
+    AuthenticationState authState = await AuthStateProvider.GetAuthenticationStateAsync();
+    ClaimsPrincipal user = authState.User;
+    isAdmin = user.IsInRole("Admin");
+  }
+
   private Task BeginSignOut()
   {
     Navigation.NavigateToLogout("authentication/logout");

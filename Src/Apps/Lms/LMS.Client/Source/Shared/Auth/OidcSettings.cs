@@ -1,4 +1,4 @@
-namespace LMS.Client.Source.Shared.Configs.Models;
+namespace LMS.Client.Source.Shared.Auth;
 
 public class OidcSettings
 {
@@ -10,9 +10,6 @@ public class OidcSettings
 
     [JsonPropertyName("ClientId")]
     public string ClientId { get; set; } = string.Empty;
-
-    [JsonPropertyName("ClientSecret")]
-    public string ClientSecret { get; set; } = string.Empty;
 
     public string Authority => $"{Url}/realms/{Realm}";
 }

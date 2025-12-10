@@ -10,8 +10,8 @@ public static class Policy
 
 public static class Role
 {
-    public const string Admin = "kk-lms-admin";
-    public const string Pupil = "kk-lms-pupil";
-    public const string Parent = "kk-lms-parent";
-    public const string Teacher = "kk-lms-teacher";
+    public const string Admin = "admin";
+    public const string Pupil = "pupil";
+    public const string Parent = "parent";
+    public const string Teacher = "teacher";
 }
