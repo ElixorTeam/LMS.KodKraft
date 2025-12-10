@@ -1,6 +1,21 @@
 ﻿@attribute [Route($"{Urls.Courses}")]
 @using LMS.Client.Source.Widgets
+@using LMS.Components.Source.UI.Button
+@using Microsoft.AspNetCore.Components.WebAssembly.Authentication
+@attribute [Authorize]
+@inject NavigationManager Navigation
+
+
+<Button OnClick="@BeginSignOut" Kind="BtnKind.Link">Выйти</Button>
 
 <h1>Редактор кода</h1>
-
 <Monaco />
+
+@code {
+  private Task BeginSignOut()
+  {
+    Navigation.NavigateToLogout("authentication/logout");
+    return Task.CompletedTask;
+  }
+}
+

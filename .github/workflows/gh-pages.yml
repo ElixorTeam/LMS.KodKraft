@@ -6,8 +6,10 @@ name: github pages
 on:
   push:
     branches:
-      - develop
-
+      - main
+    paths:
+      - 'Src/Libs/LMS.Components.Client/**'
+      - 'Src/Libs/LMS.Components/**'
 jobs:
   deploy:
     runs-on: ubuntu-latest
