@@ -1,0 +1,53 @@
+﻿@using LMS.Components.Client.Source.Shared.UI.View
+@using LMS.Components.Source.UI.Form
+@attribute [Route($"{Urls.Form}")]
+
+<ViewHeader Title="Form" />
+
+<div class="max-w-4xl mx-auto space-y-10">
+
+  <section class="space-y-4">
+    <h2 class="text-xl font-semibold">InputTextField</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div class="space-y-2">
+        <p class="text-sm text-muted-foreground">Default</p>
+        <InputTextField @bind-Value="@_inputTextValue" Placeholder="Текст" />
+      </div>
+
+      <div class="space-y-2">
+        <p class="text-sm text-muted-foreground">ReadOnly</p>
+        <InputTextField Placeholder="ReadOnly" ReadOnly />
+      </div>
+
+      <div class="space-y-2">
+        <p class="text-sm text-muted-foreground">Disabled</p>
+        <InputTextField Placeholder="Disabled" Disabled />
+      </div>
+    </div>
+  </section>
+
+  <section class="space-y-4">
+    <h2 class="text-xl font-semibold">InputTextAreaField</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 auto-rows-min gap-4">
+      <div class="space-y-2">
+        <p class="text-sm text-muted-foreground">Default</p>
+        <InputTextAreaField @bind-Value="@_inputTextValue" Placeholder="Текст" />
+      </div>
+      <div class="space-y-2">
+        <p class="text-sm text-muted-foreground">ReadOnly</p>
+        <InputTextAreaField Placeholder="ReadOnly" ReadOnly />
+      </div>
+      <div class="space-y-2">
+        <p class="text-sm text-muted-foreground">Disabled</p>
+        <InputTextAreaField Placeholder="Disabled" Disabled />
+      </div>
+    </div>
+  </section>
+
+</div>
+
+@code {
+  private string _inputTextValue = string.Empty;
+}

@@ -20,14 +20,14 @@
 
 <div class="mt-4 flex items-center gap-2">
   <Badge Kind="BadgeKind.Default">Current tab:</Badge>
-  <span class="font-semibold text-gray-700 text-sm">
+  <span class="font-semibold text-sm">
     @CurrentTab.Capitalize()
   </span>
 </div>
 
 <div class="flex items-center gap-2 mt-2">
   <Badge Kind="BadgeKind.Destructive">Current URL:</Badge>
-  <span class="font-mono text-gray-700 text-xs break-all">
+  <span class="font-mono text-xs break-all">
     @NavigationManager.Uri
   </span>
 </div>
@@ -36,7 +36,7 @@
   @foreach (string tab in _tabs)
   {
     <Tab Id="@tab">
-      <div class="mt-2 rounded-lg shadow-sm  border text-gray-700 text-sm leading-relaxed">
+      <div class="mt-2 rounded-lg shadow-sm border text-sm leading-relaxed">
         This is the <span class="font-medium">@tab</span> content section.
       </div>
     </Tab>

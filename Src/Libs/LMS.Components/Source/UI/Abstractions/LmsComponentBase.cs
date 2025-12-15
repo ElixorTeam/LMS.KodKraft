@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Components;
 using TailwindMerge;
 
+// ReSharper disable once CheckNamespace
 namespace LMS.Components.Source.UI;
 
 public abstract class LmsComponentBase : ComponentBase

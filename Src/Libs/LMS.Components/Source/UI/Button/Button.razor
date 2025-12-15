@@ -66,28 +66,25 @@ else
 
   private string ButtonClasses => ClassMerge(BaseClasses, KindClasses, SizeClasses, Class);
 
-  private static string BaseClasses => "inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors disabled:pointer-events-none disabled:opacity-5 select-none";
+  private static string BaseClasses => "inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors disabled:pointer-events-none disabled:opacity-10 select-none";
 
   private string KindClasses => Kind switch
   {
-    BtnKind.Default => KindCssFromColor("primary"),
-    BtnKind.Secondary => KindCssFromColor("secondary"),
-    BtnKind.Destructive => KindCssFromColor("destructive"),
-    BtnKind.Outline => "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
-    BtnKind.Ghost => "hover:bg-accent hover:text-accent-foreground",
+    BtnKind.Default => "bg-primary text-primary-foreground hover:bg-primary/90",
+    BtnKind.Secondary => "bg-secondary text-secondary-foreground hover:bg-secondary/80",
+    BtnKind.Destructive => "bg-destructive text-white hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60",
+    BtnKind.Outline => "border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50",
+    BtnKind.Ghost => "hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50",
     BtnKind.Link => "text-primary underline-offset-4 hover:underline",
     _ => string.Empty
   };
 
-  private static string KindCssFromColor(string color) =>
-    $"bg-{color} text-{color}-foreground hover:bg-{color}/80";
-
   private string SizeClasses => Size switch
   {
     BtnSize.Default => "h-9 px-4 py-2",
+    BtnSize.Sm => "h-8 rounded-md px-3 text-xs",
+    BtnSize.Lg => "h-10 rounded-md px-8",
     BtnSize.Icon => "h-9 w-9",
-    BtnSize.Small => "h-8 rounded-md px-3 text-xs",
-    BtnSize.Large => "h-10 rounded-md px-8",
     BtnSize.Full => "size-full",
     _ => string.Empty
   };

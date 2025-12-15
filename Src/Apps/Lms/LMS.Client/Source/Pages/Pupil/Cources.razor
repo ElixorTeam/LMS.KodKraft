@@ -10,20 +10,20 @@
 
 <h1>Редактор кода</h1>
 
-@if (isAdmin)
+@if (_isAdmin)
 {
   <Monaco />
 }
 
 
 @code {
-  bool isAdmin;
+  bool _isAdmin;
 
   protected override async Task OnInitializedAsync()
   {
     AuthenticationState authState = await AuthStateProvider.GetAuthenticationStateAsync();
     ClaimsPrincipal user = authState.User;
-    isAdmin = user.IsInRole("Admin");
+    _isAdmin = user.IsInRole("Admin");
   }
 
   private Task BeginSignOut()

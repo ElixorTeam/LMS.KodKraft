@@ -35,7 +35,7 @@
 </li>
 
 @code {
-  [Inject] private NavigationManager NavigationManager { get; set; } = default!;
+  [Inject] private NavigationManager NavigationManager { get; set; } = null!;
 
   [Parameter, EditorRequired] public string Label { get; set; } = string.Empty;
   [Parameter, EditorRequired] public string Icon { get; set; } = HeroiconName.Home;

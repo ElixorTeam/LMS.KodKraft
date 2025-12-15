@@ -22,16 +22,6 @@
     </None>
   </ItemGroup>
 
-  <ItemGroup>
-    <_ContentIncludedByDefault Remove="wwwroot\fonts\font.css" />
-    <_ContentIncludedByDefault Remove="wwwroot\fonts\Geist-Bold.woff2" />
-    <_ContentIncludedByDefault Remove="wwwroot\fonts\Geist-ExtraLight.woff2" />
-    <_ContentIncludedByDefault Remove="wwwroot\fonts\Geist-Light.woff2" />
-    <_ContentIncludedByDefault Remove="wwwroot\fonts\Geist-Medium.woff2" />
-    <_ContentIncludedByDefault Remove="wwwroot\fonts\Geist-Regular.woff2" />
-    <_ContentIncludedByDefault Remove="wwwroot\fonts\Geist-SemiBold.woff2" />
-  </ItemGroup>
-
   <Import Project="..\..\.targets\bun\Install.targets" />
   <Import Project="..\..\.targets\bun\Build.targets" />
 

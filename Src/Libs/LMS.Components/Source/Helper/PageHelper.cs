@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Components;
 
 namespace LMS.Components.Source.Helper;
 
-public class PageHelper(NavigationManager navigationManager)
+public sealed class PageHelper(NavigationManager navigationManager)
 {
     public string? GetUrlQueryParam(string key)
     {

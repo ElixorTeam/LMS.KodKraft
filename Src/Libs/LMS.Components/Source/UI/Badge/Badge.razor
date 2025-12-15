@@ -23,13 +23,10 @@
 
   private string KindClasses => Kind switch
   {
-    BadgeKind.Default => KindCssFromColor("primary"),
-    BadgeKind.Secondary => KindCssFromColor("secondary"),
-    BadgeKind.Destructive => KindCssFromColor("destructive"),
-    BadgeKind.Outline => "text-foreground",
+    BadgeKind.Default => "bg-primary text-primary-foreground [a&]:hover:bg-primary/90",
+    BadgeKind.Secondary => "bg-secondary text-secondary-foreground [a&]:hover:bg-secondary/90",
+    BadgeKind.Destructive => "bg-destructive text-white [a&]:hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60",
+    BadgeKind.Outline => "border text-foreground [a&]:hover:bg-accent [a&]:hover:text-accent-foreground",
     _ => string.Empty
   };
-
-  private static string KindCssFromColor(string color) =>
-    $"border-transparent bg-{color} text-{color}-foreground hover:bg-{color}/80";
 }

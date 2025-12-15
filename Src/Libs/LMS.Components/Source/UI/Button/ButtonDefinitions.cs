@@ -14,8 +14,8 @@ public enum BtnSize
 {
     Default,
     Icon,
-    Small,
-    Large,
+    Sm,
+    Lg,
     Full
 }
 

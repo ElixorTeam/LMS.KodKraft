@@ -15,11 +15,9 @@
 </div>
 
 @code {
-  private readonly string[] _colors =
-  [
-    "primary", "secondary", "muted", "destructive", "accent", "card", "popover",
-  ];
+  private readonly string[] _colors = ["primary", "secondary", "muted", "destructive", "accent", "card", "popover"];
 
-  private static string GetClasses(string color) => $"h-16 rounded-lg border flex items-center justify-center " +
-                                                    $"p-4 text-center bg-{color} text-{color}-foreground";
+  private static string GetClasses(string color) =>
+    $"h-16 rounded-lg border flex items-center justify-center " +
+    $"p-4 text-center bg-{color} text-{color}-foreground";
 }

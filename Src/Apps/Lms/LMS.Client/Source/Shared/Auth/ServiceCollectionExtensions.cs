@@ -8,8 +8,6 @@ public static class ServiceCollectionExtensions
     public static IServiceCollection AddKeyCloak(this IServiceCollection services, IConfiguration configuration)
     {
         // builder.Services.AddScoped(_ => new HttpClient { BaseAddress = new(builder.HostEnvironment.BaseAddress) });
-        Console.WriteLine("Вывод");
-        Console.WriteLine(configuration["Domain"]);
         OidcSettings settings = configuration.GetSection("OidcSettings").Get<OidcSettings>() ?? throw new InvalidOperationException();
         string appDomain = configuration["Domain"] ?? throw new InvalidOperationException();
 

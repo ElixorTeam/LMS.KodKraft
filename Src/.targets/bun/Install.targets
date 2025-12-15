@@ -17,7 +17,7 @@
     </ItemGroup>
 
     <!-- Проверка, что Bun установлен -->
-    <Target Name="CheckForBun" BeforeTargets="BunInstall" Condition="'$(PublishDir)' == ''">
+    <Target Name="CheckForBun" BeforeTargets="BunInstall">
         <Exec Command="bun -v" ContinueOnError="true" ConsoleToMsBuild="false" IgnoreExitCode="false">
             <Output TaskParameter="ExitCode" PropertyName="ErrorCode" />
         </Exec>
@@ -25,7 +25,7 @@
     </Target>
 
     <!-- Установка Bun зависимостей (если нет маркера) -->
-    <Target Name="BunInstall" BeforeTargets="StaticsBuild" Inputs="package.json" Outputs="$(BunLastInstall)" Condition="'$(PublishDir)' == ''">
+    <Target Name="BunInstall" BeforeTargets="StaticsBuild" Inputs="package.json" Outputs="$(BunLastInstall)">
         <Message Text=" " Importance="High" />
         <Message Text="---------------------------------------" Importance="High" />
         <Message Text="Installing Bun dependencies: $(MSBuildProjectName)" Importance="High" />
