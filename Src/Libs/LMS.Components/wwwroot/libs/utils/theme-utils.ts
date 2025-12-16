@@ -16,7 +16,6 @@ window.switchTheme = (theme: string): void => {
     } else {
         localStorage.setItem(themeKey, theme)
     }
-
     root.classList.toggle('dark', isDarkMode)
 }
 

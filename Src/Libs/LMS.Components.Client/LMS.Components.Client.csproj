@@ -10,9 +10,8 @@
     <ItemGroup Label="Setup LMS.Components">
         <ProjectReference Include="..\LMS.Components\LMS.Components.csproj" />
     </ItemGroup>
-
     <ItemGroup>
-      <_ContentIncludedByDefault Remove="Source\Shared\Features\ThemeSwitcher\ThemeSwitcher.razor" />
+      <TypeScriptCompile Include="wwwroot\libs\index.ts" />
     </ItemGroup>
 
     <Import Project="..\..\.targets\bun\Install.targets" />

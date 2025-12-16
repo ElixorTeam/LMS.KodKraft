@@ -7,41 +7,73 @@
 <div class="max-w-4xl mx-auto space-y-10">
 
   <section class="space-y-4">
-    <h2 class="text-xl font-semibold">InputTextField</h2>
+    <h2 class="text-xl font-semibold">@nameof(InputTextField)</h2>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
       <div class="space-y-2">
-        <p class="text-sm text-muted-foreground">Default</p>
-        <InputTextField @bind-Value="@_inputTextValue" Placeholder="Текст" />
+        <p class="text-sm text-muted-foreground">MaxLength: 15</p>
+        <InputTextField @bind-Value="@_inputTextValue" Placeholder="Текст" maxlength="15" />
       </div>
 
       <div class="space-y-2">
         <p class="text-sm text-muted-foreground">ReadOnly</p>
-        <InputTextField Placeholder="ReadOnly" ReadOnly />
+        <InputTextField  @bind-Value="@_inputTextValue" Placeholder="ReadOnly" ReadOnly />
       </div>
 
       <div class="space-y-2">
         <p class="text-sm text-muted-foreground">Disabled</p>
-        <InputTextField Placeholder="Disabled" Disabled />
+        <InputTextField @bind-Value="@_inputTextValue" Placeholder="Disabled" Disabled />
       </div>
     </div>
   </section>
 
   <section class="space-y-4">
-    <h2 class="text-xl font-semibold">InputTextAreaField</h2>
+    <h2 class="text-xl font-semibold">@nameof(InputTextAreaField)</h2>
 
     <div class="grid grid-cols-1 md:grid-cols-3 auto-rows-min gap-4">
       <div class="space-y-2">
-        <p class="text-sm text-muted-foreground">Default</p>
-        <InputTextAreaField @bind-Value="@_inputTextValue" Placeholder="Текст" />
+        <p class="text-sm text-muted-foreground">MaxLength: 150</p>
+        <InputTextAreaField @bind-Value="@_inputAreaValue" Placeholder="Текст" maxlength="150"/>
       </div>
       <div class="space-y-2">
         <p class="text-sm text-muted-foreground">ReadOnly</p>
-        <InputTextAreaField Placeholder="ReadOnly" ReadOnly />
+        <InputTextAreaField @bind-Value="@_inputAreaValue" Placeholder="ReadOnly" ReadOnly />
       </div>
       <div class="space-y-2">
         <p class="text-sm text-muted-foreground">Disabled</p>
-        <InputTextAreaField Placeholder="Disabled" Disabled />
+        <InputTextAreaField @bind-Value="@_inputAreaValue" Placeholder="Disabled" Disabled />
+      </div>
+    </div>
+  </section>
+
+  <section class="space-y-4">
+    <h2 class="text-xl font-semibold">@nameof(InputNumberField<short>)</h2>
+
+    <div class="grid grid-cols-3 auto-rows-min gap-4 items-start">
+      <div class="space-y-1">
+        <p class="text-sm text-muted-foreground">Int | Step: 1 | Min: -10 | Max: 1000</p>
+        <InputNumberField @bind-Value="_inputIntValue" Placeholder="Число" Min="-10" Max="1000"/>
+      </div>
+      <div class="space-y-1">
+        <p class="text-sm text-muted-foreground">ReadOnly</p>
+        <InputNumberField @bind-Value="_inputIntValue" Placeholder="ReadOnly" ReadOnly />
+      </div>
+      <div class="space-y-1">
+        <p class="text-sm text-muted-foreground">Disabled</p>
+        <InputNumberField @bind-Value="_inputIntValue" Placeholder="Disabled" Disabled />
+      </div>
+
+      <div class="space-y-1">
+        <p class="text-sm text-muted-foreground">Decimal | Step: 0.5 | Min: 0.5m | Max: 100.5</p>
+        <InputNumberField @bind-Value="_inputDecimalValue" Placeholder="Число" Min="0.5m" Max="100.5m" Step="0.5m"/>
+      </div>
+      <div class="space-y-1">
+        <p class="text-sm text-muted-foreground">ReadOnly</p>
+        <InputNumberField @bind-Value="_inputDecimalValue" Placeholder="ReadOnly" ReadOnly />
+      </div>
+      <div class="space-y-1">
+        <p class="text-sm text-muted-foreground">Disabled</p>
+        <InputNumberField @bind-Value="_inputDecimalValue" Placeholder="Disabled" Disabled />
       </div>
     </div>
   </section>
@@ -49,5 +81,8 @@
 </div>
 
 @code {
-  private string _inputTextValue = string.Empty;
+  int _inputIntValue;
+  decimal _inputDecimalValue;
+  string _inputTextValue = string.Empty;
+  string _inputAreaValue = string.Empty;
 }
