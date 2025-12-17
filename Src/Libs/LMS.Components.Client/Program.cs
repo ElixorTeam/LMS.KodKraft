@@ -6,8 +6,8 @@ using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 WebAssemblyHostBuilder builder = WebAssemblyHostBuilder.CreateDefault(args);
 
 builder.Services
-    .AddWMBOS()
-    .AddLmsComponents();
+    .AddLmsComponents()
+    .AddWMBOS();
 
 builder.RootComponents.Add<App>("#app");
 builder.RootComponents.Add<HeadOutlet>("head::after");

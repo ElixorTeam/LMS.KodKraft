@@ -1,0 +1,12 @@
+﻿@inherits LmsComponentBase
+
+<div
+  @attributes="AdditionalAttributes"
+  class="@ClassMerge("border-border rounded", BaseClass, Class)"
+  data-orientation="@(Vertical ? "vertical" : "horizontal")"
+/>
+
+@code {
+  [Parameter] public bool Vertical { get; set; }
+  private string BaseClass => Vertical ? "w-px border-l" : "h-px border-b";
+}

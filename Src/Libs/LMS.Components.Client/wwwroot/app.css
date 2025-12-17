@@ -82,6 +82,33 @@
   }
 }
 
+/*fluent-switch::part(control),*/
+/*fluent-checkbox::part(control) {*/
+/*  border-width: 1px;*/
+/*  border-style: solid;*/
+/*  : theme('colors.input');*/
+/*  border-radius: 0.375rem;*/
+/*}*/
+
+
+fluent-switch,
+fluent-checkbox {
+  --neutral-fill-input-alt-rest: var(--input);
+  --neutral-fill-input-alt-hover: color-mix(in srgb, var(--input) 80%, var(--primary) 20%);
+  --neutral-fill-input-alt-active: color-mix(in srgb, var(--input) 70%, var(--primary) 30%);
+
+  --neutral-foreground-rest: var(--background);
+  --neutral-foreground-hover: var(--background);
+  --neutral-foreground-active: var(--background);
+
+  --accent-fill-rest: var(--primary);
+  --accent-fill-hover: color-mix(in srgb, var(--primary) 95%, var(--background) 5%);
+  --accent-fill-active: color-mix(in srgb, var(--primary) 90%, var(--background) 10%);
+
+  --foreground-on-accent-rest: var(--background);
+  --foreground-on-accent-hover: var(--background);
+  --foreground-on-accent-active: var(--background);
+}
 
 @theme inline {
   --font-sans: "Geist Sans", ui-sans-serif, system-ui, sans-serif;

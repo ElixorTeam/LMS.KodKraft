@@ -1,4 +1,6 @@
-<div class="w-full border-b mb-4">
+@using LMS.Components.Source.UI
+
+<div class="w-full mb-4">
   <div class="py-2 flex w-full justify-between items-center">
     @if (!string.IsNullOrWhiteSpace(Title))
     {
@@ -28,6 +30,7 @@
       @TabsContent
     </div>
   }
+  <Separator />
 </div>
 
 @code {

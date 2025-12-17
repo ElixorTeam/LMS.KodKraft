@@ -1,10 +1,32 @@
-﻿@using LMS.Components.Client.Source.Shared.UI.View
+﻿@attribute [Route($"{Urls.Other}")]
+@using LMS.Components.Client.Source.Shared.UI.View
 @using LMS.Components.Source.UI
-@attribute [Route($"{Urls.Other}")]
 
 <ViewHeader Title="Other" />
 
-@*  *@
+<div class="flex gap-12">
+  <div class="flex-1">
+    <h2 class="text-lg mb-4">Separator (Horizontal)</h2>
+    <div class="flex flex-col gap-2">
+      <div class="text-sm">Block 1</div>
+      <Separator />
+      <div class="text-sm">Block 2</div>
+      <Separator />
+      <div class="text-sm">Block 3</div>
+      <Separator />
+    </div>
+  </div>
+  <div class="flex-1 flex-col items-center justify-center">
+    <h2 class="text-lg mb-4">Separator (Vertical)</h2>
+    <div class="flex gap-2">
+      <div class="text-sm">Block 1</div>
+      <Separator Vertical />
+      <div class="text-sm">Block 2</div>
+      <Separator Vertical />
+      <div class="text-sm">Block 3</div>
+    </div>
+  </div>
+</div>
 
-<h1>Skeleton</h1>
+<h1 class="text-2xl font-bold mt-8 mb-4">Skeleton Example</h1>
 <Skeleton class="h-50 w-50" />
