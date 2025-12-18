@@ -1,3 +1,4 @@
+@using LMS.Components.Source.Utils
 @inherits InputBase<string>
 
 <textarea
@@ -5,7 +6,7 @@
   id="@Id"
   @bind="Value"
   @bind:after="OnValueChanged"
-  class="@ClassMerge(BaseClass, Class)"
+  class="@ClassMerge(BaseClass, Tw.Ring, Class)"
   disabled="@Disabled"
   readonly="@ReadOnly"
   autofocus="@AutoFocus"
@@ -23,9 +24,7 @@
     // Typography
     "text-base md:text-sm " +
     // Shadow, transition, outline
-    "shadow-xs transition-[color,box-shadow] outline-none " +
+    "shadow-xs transition-[color,box-shadow] " +
     // Disabled state
-    "disabled:cursor-not-allowed disabled:opacity-50 " +
-    // Focus ring
-    "focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px]";
+    "disabled:cursor-not-allowed disabled:opacity-50";
 }

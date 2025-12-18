@@ -1,14 +1,12 @@
 ﻿@using LMS.Components.Client.Source.Shared.UI.View
 @using LMS.Components.Source.UI.Form
-@attribute [Route($"{Urls.Form}")]
+@attribute [Route($"{Urls.Input}")]
 
-<ViewHeader Title="Form" />
+<ViewHeader Title="Input fields" />
 
 <div class="max-w-4xl mx-auto space-y-10">
-
   <section class="space-y-4">
     <h2 class="text-xl font-semibold">@nameof(InputTextField)</h2>
-
     <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
       <div class="space-y-2">
         <p class="text-sm text-muted-foreground">MaxLength: 15</p>
@@ -29,7 +27,6 @@
 
   <section class="space-y-4">
     <h2 class="text-xl font-semibold">@nameof(InputTextAreaField)</h2>
-
     <div class="grid grid-cols-1 md:grid-cols-3 auto-rows-min gap-4">
       <div class="space-y-2">
         <p class="text-sm text-muted-foreground">MaxLength: 150</p>
@@ -48,7 +45,6 @@
 
   <section class="space-y-4">
     <h2 class="text-xl font-semibold">@nameof(InputNumberField<short>)</h2>
-
     <div class="grid grid-cols-3 auto-rows-min gap-4 items-start">
       <div class="space-y-1">
         <p class="text-sm text-muted-foreground">Int | Step: 1 | Min: -10 | Max: 1000</p>
@@ -77,7 +73,6 @@
       </div>
     </div>
   </section>
-
 </div>
 
 @code {

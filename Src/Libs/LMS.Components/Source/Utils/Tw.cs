@@ -2,5 +2,5 @@
 
 public static class Tw
 {
-    public const string Ring = "outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px]";
+    public const string Ring = "outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[2px]";
 }

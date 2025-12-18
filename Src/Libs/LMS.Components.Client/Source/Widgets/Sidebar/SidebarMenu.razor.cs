@@ -29,10 +29,13 @@ public sealed partial class SidebarMenu : ComponentBase
         new("Сomponents", HeroiconName.RectangleStack, [
             new("Button", Urls.Button),
             new("Badge", Urls.Badge),
-            new("Form", Urls.Form),
             new("Accordion", Urls.Accordion),
             new("Tabs", Urls.Tab),
             new("Other", Urls.Other)
+        ]),
+        new("Form",HeroiconName.Bookmark, [
+            new("Inputs", Urls.Input),
+            new("Booleans", Urls.Bool),
         ]),
     ];
 }
