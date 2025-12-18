@@ -1,4 +1,5 @@
-﻿@inherits LmsComponentBase
+﻿@using LMS.Components.Source.Utils
+@inherits LmsComponentBase
 
 @if (string.IsNullOrWhiteSpace(Link))
 {
@@ -64,7 +65,7 @@ else
   /// </remarks>
   [Parameter] public string Link { get; set; } = string.Empty;
 
-  private string ButtonClasses => ClassMerge(BaseClasses, KindClasses, SizeClasses, Class);
+  private string ButtonClasses => ClassMerge(Tw.Ring, BaseClasses, KindClasses, SizeClasses, Class);
 
   private static string BaseClasses => "inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors disabled:pointer-events-none disabled:opacity-10 select-none";
 
@@ -72,7 +73,7 @@ else
   {
     BtnKind.Default => "bg-primary text-primary-foreground hover:bg-primary/90",
     BtnKind.Secondary => "bg-secondary text-secondary-foreground hover:bg-secondary/80",
-    BtnKind.Destructive => "bg-destructive text-white hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60",
+    BtnKind.Destructive => "bg-destructive text-destructive-foreground hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60",
     BtnKind.Outline => "border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50",
     BtnKind.Ghost => "hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50",
     BtnKind.Link => "text-primary underline-offset-4 hover:underline",

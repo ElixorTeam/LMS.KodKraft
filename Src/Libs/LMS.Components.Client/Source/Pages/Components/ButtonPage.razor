@@ -24,7 +24,7 @@
 
   <section class="space-y-4 w-full px-4">
     <h2 class="text-xl font-semibold">Sizes</h2>
-    <div class="flex w-full justify-start gap-2">
+    <div class="flex w-full justify-start items-center gap-2">
       @foreach (BtnSize size in Enum.GetValues<BtnSize>())
       {
         <Button Size="size">@size.GetDescription()</Button>
