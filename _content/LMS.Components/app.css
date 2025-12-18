@@ -1,0 +1,110 @@
+﻿@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+}
+
+fluent-switch {
+  /* ========== ON (checked) ========== */
+  /* track */
+  --accent-fill-rest: var(--primary);
+  --accent-fill-hover: var(--accent-fill-rest);
+  --accent-fill-active: var(--accent-fill-rest);
+  --accent-fill-focus: var(--accent-fill-rest);
+
+  /* thumb */
+  --foreground-on-accent-rest: var(--background);
+  --foreground-on-accent-hover: var(--foreground-on-accent-rest);
+  --foreground-on-accent-active: var(--foreground-on-accent-rest);
+  --foreground-on-accent-focus: var(--foreground-on-accent-rest);
+
+  /* ========== OFF (unchecked) ========== */
+  /* track */
+  --neutral-fill-input-alt-rest: var(--input);
+  --neutral-fill-input-alt-hover: var(--neutral-fill-input-alt-rest);
+  --neutral-fill-input-alt-active: var(--neutral-fill-input-alt-rest);
+  --neutral-fill-input-alt-focus: var(--neutral-fill-input-alt-rest);
+
+  /* thumb */
+  --neutral-foreground-rest: var(--foreground);
+  --neutral-foreground-hover: var(--neutral-foreground-rest);
+  --neutral-foreground-active: var(--neutral-foreground-rest);
+  --neutral-foreground-focus: var(--neutral-foreground-rest);
+}
+
+.dark fluent-switch {
+  /* ON thumb */
+  --foreground-on-accent-rest: var(--primary-foreground);
+}
+
+
+fluent-checkbox {
+  /*!* border *!*/
+  /*--neutral-stroke-strong-rest: var(--input);*/
+
+  /* ========== ON (checked) ========== */
+  --accent-fill-rest: var(--primary);
+  --accent-fill-hover: var(--primary);
+  --accent-fill-active: var(--primary);
+  --accent-fill-focus: var(--primary);
+
+  --foreground-on-accent-rest: var(--primary-foreground);
+
+   /*========== OFF (unchecked) ==========*/
+  --neutral-fill-input-alt-rest: var(--input);
+  --neutral-fill-input-alt-hover: var(--neutral-fill-input-alt-rest);
+  --neutral-fill-input-alt-active:var(--neutral-fill-input-alt-rest);
+  --neutral-fill-input-alt-focus: var(--neutral-fill-input-alt-rest);
+}
+
+fluent-switch,
+fluent-checkbox {
+  /*!*On*!*/
+  /*--neutral-fill-input-alt-rest: var(--primary);*/
+  /*--neutral-foreground-rest: var(--primary-foreground);*/
+
+  /*--neutral-fill-input-alt-hover: color-mix(in srgb, var(--primary) 90%, var(--primary-foreground) 10%);*/
+  /*--neutral-foreground-hover: color-mix(in srgb, var(--primary-foreground) 90%, var(--primary) 10%);*/
+
+  /*--neutral-fill-input-alt-active: color-mix(in srgb, var(--primary) 80%, var(--primary-foreground) 20%);*/
+  /*--neutral-foreground-active: color-mix(in srgb, var(--primary-foreground) 80%, var(--primary) 20%);*/
+
+  /*!*Off*!*/
+  /*--accent-fill-rest: var(--primary);*/
+  /*--foreground-on-accent-rest: var(--primary-foreground);*/
+
+  /*--accent-fill-hover: color-mix(in srgb, var(--primary) 90%, var(--primary-foreground) 10%);*/
+  /*--foreground-on-accent-hover: color-mix(in srgb, var(--primary-foreground) 90%, var(--primary) 10%);*/
+
+  /*--accent-fill-active: color-mix(in srgb, var(--primary) 80%, var(--primary-foreground) 20%);*/
+  /*--foreground-on-accent-active: color-mix(in srgb, var(--primary-foreground) 80%, var(--primary) 20%);*/
+
+
+  --disabled-opacity: 0.5;
+
+  /*Tab focus*/
+  --focus-stroke-width: 2;
+  --focus-stroke-outer: color-mix(in srgb, var(--primary) 50%, var(--background) 50%);
+  --focus-stroke-inner: transparent;
+}

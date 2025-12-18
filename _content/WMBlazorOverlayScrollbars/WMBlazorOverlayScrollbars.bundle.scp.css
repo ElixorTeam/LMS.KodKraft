@@ -1,0 +1,18 @@
+@import '';
+
+/* _content/WMBlazorOverlayScrollbars/WMBOS/BlazorOverlayScrollbars.razor.rz.scp.css */
+.WMBOS[b-3hz2kmyvjn] {
+    width: auto;
+}
+.WMBOS .WMBOS-loading[b-3hz2kmyvjn] {
+    display: none;
+}
+.WMBOS.loading .WMBOS-content[b-3hz2kmyvjn] {
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    position: relative;
+}
+.WMBOS.loading .WMBOS-loading[b-3hz2kmyvjn] {
+    display: block;
+}

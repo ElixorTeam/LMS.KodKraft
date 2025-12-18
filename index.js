@@ -1,0 +1,1 @@
+(()=>{(function(){document.addEventListener("keydown",t=>{if(t.key.toLowerCase()!=="d")return;let e=t.target;e instanceof HTMLInputElement||e instanceof HTMLTextAreaElement||e instanceof HTMLElement&&e.isContentEditable||(t.preventDefault(),window.toggleTheme())})})();})();
