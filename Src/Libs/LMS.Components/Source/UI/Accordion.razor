@@ -1,5 +1,4 @@
 @using Blazor.Heroicons.Outline
-@using LMS.Components.Source.Utils
 @inherits LmsComponentBase
 
 <div data-state="@(Visible ? "open" : "closed")" class="border-b last:border-b-0 group">
@@ -9,7 +8,7 @@
     aria-controls="@Id"
     aria-expanded="@Visible"
     class="@Css.Class(
-           Tw.Ring,
+           Tw.FocusVisible,
            "flex w-full flex-1 items-start justify-between gap-4 rounded-md py-4 text-left",
            "text-sm font-medium transition-all hover:underline disabled:pointer-events-none disabled:opacity-50",
            Class

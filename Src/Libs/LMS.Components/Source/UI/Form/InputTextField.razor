@@ -1,5 +1,4 @@
-﻿@using LMS.Components.Source.Utils
-@inherits InputBase<string>
+﻿@inherits InputBase<string>
 
 <input
   @attributes="AdditionalAttributes"
@@ -7,7 +6,7 @@
   type="@Type.GetDescription()"
   @bind="Value"
   @bind:after="OnValueChanged"
-  class="@ClassMerge(BaseClass, Tw.Ring, Class)"
+  class="@ClassMerge(BaseClass, Tw.FocusVisible, Class)"
   disabled="@Disabled"
   readonly="@ReadOnly"
   autofocus="@AutoFocus"

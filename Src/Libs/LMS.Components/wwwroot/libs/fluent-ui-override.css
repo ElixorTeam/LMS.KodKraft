@@ -1,0 +1,64 @@
+﻿fluent-switch {
+  /* ========== ON (checked) ========== */
+  /* track */
+  --accent-fill-rest: var(--primary);
+  --accent-fill-hover: var(--accent-fill-rest);
+  --accent-fill-active: var(--accent-fill-rest);
+  --accent-fill-focus: var(--accent-fill-rest);
+
+  /* thumb */
+  --foreground-on-accent-rest: var(--background);
+  --foreground-on-accent-hover: var(--foreground-on-accent-rest);
+  --foreground-on-accent-active: var(--foreground-on-accent-rest);
+  --foreground-on-accent-focus: var(--foreground-on-accent-rest);
+
+  /* ========== OFF (unchecked) ========== */
+  /* track */
+  --neutral-fill-input-alt-rest: var(--input);
+  --neutral-fill-input-alt-hover: var(--neutral-fill-input-alt-rest);
+  --neutral-fill-input-alt-active: var(--neutral-fill-input-alt-rest);
+  --neutral-fill-input-alt-focus: var(--neutral-fill-input-alt-rest);
+
+  /* thumb */
+  --neutral-foreground-rest: var(--foreground);
+  --neutral-foreground-hover: var(--neutral-foreground-rest);
+  --neutral-foreground-active: var(--neutral-foreground-rest);
+  --neutral-foreground-focus: var(--neutral-foreground-rest);
+}
+
+.dark fluent-switch {
+  /* ON thumb */
+  --foreground-on-accent-rest: var(--primary-foreground);
+}
+
+fluent-checkbox {
+  /*!* border *!*/
+  /*--neutral-stroke-strong-rest: var(--input);*/
+
+  /* ========== ON (checked) ========== */
+  --accent-fill-rest: var(--primary);
+  --accent-fill-hover: var(--accent-fill-rest);
+  --accent-fill-active: var(--accent-fill-rest);
+  --accent-fill-focus: var(--accent-fill-rest);
+
+  --foreground-on-accent-rest: var(--primary-foreground);
+
+  /*========== OFF (unchecked) ==========*/
+  --neutral-fill-input-alt-rest: var(--input);
+  --neutral-fill-input-alt-hover: var(--neutral-fill-input-alt-rest);
+  --neutral-fill-input-alt-active:var(--neutral-fill-input-alt-rest);
+  --neutral-fill-input-alt-focus: var(--neutral-fill-input-alt-rest);
+}
+
+fluent-switch,
+fluent-checkbox {
+  --disabled-opacity: 0.5;
+  /*Tab focus*/
+  --focus-stroke-width: 2;
+  --focus-stroke-outer: color-mix(in srgb, var(--primary) 50%, var(--background) 50%);
+  --focus-stroke-inner: transparent;
+}
+
+.fluent-tooltip-provider fluent-tooltip::part(tooltip) {
+  @apply bg-foreground text-background px-3 py-1.5 rounded-md text-xs after:hidden;
+}

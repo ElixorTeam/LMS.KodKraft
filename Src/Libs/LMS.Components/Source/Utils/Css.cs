@@ -13,6 +13,7 @@ public static class Css
     public static string Class(string? always, params (string?, bool)[] classes) =>
         Build(classes.Where(x => x.Item2).Select(x => x.Item1).Prepend(always));
 
+    [Pure]
     private static string Build(IEnumerable<string?> items) =>
         string.Join(" ", items).Trim();
 }
