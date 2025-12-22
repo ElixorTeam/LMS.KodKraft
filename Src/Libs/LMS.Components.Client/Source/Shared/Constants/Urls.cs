@@ -11,8 +11,9 @@ public static class Urls
     public const string Tab = "tab";
     public const string Button = "button";
     public const string Badge = "badge";
-    public const string Other = "other";
+    public const string Dropdown = "dropdown";
     public const string Accordion = "accordion";
+    public const string Other = "other";
 
     // Form
     public const string Input = "input";
