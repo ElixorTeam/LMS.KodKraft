@@ -2,13 +2,13 @@ using AngleSharp.Dom;
 
 namespace KK.Components.Tests.Tests;
 
-public class KkTabWrapperTests : BunitContext
+public class KkTabsTests : BunitContext
 {
     [Fact]
     public void Tabs_ShouldHandleEmptyActiveTabId()
     {
         // Arrange
-        IRenderedComponent<KkTabWrapper> cut = Render<KkTabWrapper>(parameters => parameters
+        IRenderedComponent<KkTabs> cut = Render<KkTabs>(parameters => parameters
             .AddChildContent<KkTabItem>(p => p.Add(t => t.Id, "first").Add(t => t.ChildContent, "<p>First tab</p>"))
             .AddChildContent<KkTabItem>(p => p.Add(t => t.Id, "second").Add(t => t.ChildContent, "<p>Second tab</p>"))
         );
@@ -24,7 +24,7 @@ public class KkTabWrapperTests : BunitContext
     public void Tabs_ShouldShowsCorrectContentOfActiveTab()
     {
         // Arrange
-        IRenderedComponent<KkTabWrapper> cut = Render<KkTabWrapper>(parameters => parameters
+        IRenderedComponent<KkTabs> cut = Render<KkTabs>(parameters => parameters
             .AddChildContent<KkTabItem>(p => p.Add(t => t.Id, "first").Add(t => t.ChildContent, "<p>First tab</p>"))
             .AddChildContent<KkTabItem>(p => p.Add(t => t.Id, "second").Add(t => t.ChildContent, "<p>Second tab</p>"))
         );
@@ -38,7 +38,7 @@ public class KkTabWrapperTests : BunitContext
     public void DefaultTab_ShouldBeSetCorrectly()
     {
         // Arrange
-        IRenderedComponent<KkTabWrapper> cut = Render<KkTabWrapper>(parameters => parameters
+        IRenderedComponent<KkTabs> cut = Render<KkTabs>(parameters => parameters
             .Add(p => p.DefaultTab, "second")
             .AddChildContent<KkTabItem>(p => p.Add(t => t.Id, "first").Add(t => t.ChildContent, "<p>First tab</p>"))
             .AddChildContent<KkTabItem>(p => p.Add(t => t.Id, "second").Add(t => t.ChildContent, "<p>Second tab</p>"))
@@ -55,7 +55,7 @@ public class KkTabWrapperTests : BunitContext
     public async Task ChangeTabMethod_ShouldChangeActiveTab()
     {
         // Arrange
-        IRenderedComponent<KkTabWrapper> cut = Render<KkTabWrapper>(parameters => parameters
+        IRenderedComponent<KkTabs> cut = Render<KkTabs>(parameters => parameters
             .AddChildContent<KkTabItem>(p => p.Add(t => t.Id, "first").Add(t => t.ChildContent, "<p>First tab</p>"))
             .AddChildContent<KkTabItem>(p => p.Add(t => t.Id, "second").Add(t => t.ChildContent, "<p>Second tab</p>"))
         );
@@ -71,7 +71,7 @@ public class KkTabWrapperTests : BunitContext
     public void SettingActiveTabId_ShouldChangeActiveTab()
     {
         // Arrange
-        IRenderedComponent<KkTabWrapper> cut = Render<KkTabWrapper>(parameters => parameters
+        IRenderedComponent<KkTabs> cut = Render<KkTabs>(parameters => parameters
             .Add(p => p.ActiveTabId, "second")
             .AddChildContent<KkTabItem>(p => p.Add(t => t.Id, "first").Add(t => t.ChildContent, "<p>First tab</p>"))
             .AddChildContent<KkTabItem>(p => p.Add(t => t.Id, "second").Add(t => t.ChildContent, "<p>Second tab</p>"))

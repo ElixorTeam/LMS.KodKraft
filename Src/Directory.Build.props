@@ -63,12 +63,12 @@
 
     <ItemGroup Label="LMS.Shared">
         <ProjectReference
-                Include="$(MSBuildThisFileDirectory)\Libs\LMS.Shared\LMS.Shared.csproj"
-                Condition="'$(MSBuildProjectName)' != 'LMS.Shared'"
+                Include="$(MSBuildThisFileDirectory)\Libs\KK.Shared\KK.Shared.csproj"
+                Condition="'$(MSBuildProjectName)' != 'KK.Shared'"
                 PrivateAssets="All"
         />
     </ItemGroup>
-    
+
     <ItemGroup Label="BF">
         <PackageReference Include="BF.Utilities" Version="1.0.0" />
         <Using Include="BF.Utilities.Utils" />

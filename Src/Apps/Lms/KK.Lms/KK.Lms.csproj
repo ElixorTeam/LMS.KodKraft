@@ -20,7 +20,6 @@
   <Import Project="..\..\..\.targets\bun\Build.targets" />
 
   <ItemGroup Label="Setup LMS.Components">
-    <ProjectReference Include="..\..\..\Libs\KK.Shared\KK.Shared.csproj" />
     <ProjectReference Include="..\..\..\Libs\KK.UIKit\KK.UIKit.csproj" />
     <ProjectReference Include="..\KK.LMS.Shared\KK.LMS.Shared.csproj" />
   </ItemGroup>

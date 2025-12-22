@@ -6,7 +6,7 @@
 
 <div class="max-w-4xl mx-auto space-y-10">
   <section class="space-y-4">
-    <h2 class="text-xl font-semibold">@nameof(InputText)</h2>
+    <h2 class="text-xl font-semibold">@nameof(KkInputText)</h2>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
       <div class="space-y-2">
         <p class="text-sm text-muted-foreground">MaxLength: 15</p>
@@ -74,25 +74,25 @@
     </div>
   </section>
 
-  <section class="space-y-4">
-    <h2 class="text-xl font-semibold">@nameof(KkInputDate)</h2>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-      <div class="space-y-2">
-        <p class="text-sm text-muted-foreground">Default</p>
-        <KkInputDate @bind-Value="@_inputDateValue" Placeholder="Время" />
-      </div>
-
-      <div class="space-y-2">
-        <p class="text-sm text-muted-foreground">ReadOnly</p>
-        <KkInputDate  @bind-Value="@_inputDateValue" Placeholder="ReadOnly" ReadOnly />
-      </div>
-
-      <div class="space-y-2">
-        <p class="text-sm text-muted-foreground">Disabled</p>
-        <KkInputDate @bind-Value="@_inputDateValue" Placeholder="Disabled" Disabled />
-      </div>
-    </div>
-  </section>
+  @* <section class="space-y-4"> *@
+  @*   <h2 class="text-xl font-semibold">@nameof(KkInputDate)</h2> *@
+  @*   <div class="grid grid-cols-1 md:grid-cols-3 gap-4"> *@
+  @*     <div class="space-y-2"> *@
+  @*       <p class="text-sm text-muted-foreground">Default</p> *@
+  @*       <KkInputDate @bind-Value="@_inputDateValue" Placeholder="Время" /> *@
+  @*     </div> *@
+  @* *@
+  @*     <div class="space-y-2"> *@
+  @*       <p class="text-sm text-muted-foreground">ReadOnly</p> *@
+  @*       <KkInputDate  @bind-Value="@_inputDateValue" Placeholder="ReadOnly" ReadOnly /> *@
+  @*     </div> *@
+  @* *@
+  @*     <div class="space-y-2"> *@
+  @*       <p class="text-sm text-muted-foreground">Disabled</p> *@
+  @*       <KkInputDate @bind-Value="@_inputDateValue" Placeholder="Disabled" Disabled /> *@
+  @*     </div> *@
+  @*   </div> *@
+  @* </section> *@
 </div>
 
 @code {

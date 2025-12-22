@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Components;
 
 // ReSharper disable once CheckNamespace
-namespace KK.UIKit.UI;
+namespace KK.UIKit.UI.Internal;
 
 public abstract class InputBase<TValue> : KkComponentBase
 {

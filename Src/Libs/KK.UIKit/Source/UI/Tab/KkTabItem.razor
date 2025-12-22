@@ -1,5 +1,5 @@
-@implements IDisposable
 @namespace KK.UIKit.UI
+@implements IDisposable
 
 @if (Control.ActiveTabId == Id)
 {
@@ -7,7 +7,7 @@
 }
 
 @code {
-  [CascadingParameter] private KkTabWrapper Control { get; set; } = null!;
+  [CascadingParameter] private KkTabs Control { get; set; } = null!;
 
   /// <summary>
   /// Required value to identify tab in tabs

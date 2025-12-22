@@ -1,0 +1,46 @@
+@namespace KK.UIKit.UI.Internal
+@typeparam TSelectItem
+@typeparam TSelectType
+@using System.Timers
+@using Blazor.Heroicons.Outline
+
+<div class="h-10 w-full border-b flex items-center px-3">
+  <MagnifyingGlassIcon class="size-4 text-muted-foreground mr-2"/>
+  <input
+    type="text"
+    name="select-search"
+    @bind="Parent.SearchString"
+    @bind:event="oninput"
+    @bind:after="OnInputChanged"
+    class="size-full border-none text-sm bg-transparent px-0 focus:outline-none focus:border-none focus:ring-0 placeholder:font-light placeholder:text-muted-foreground"
+    placeholder="@Placeholder"
+    tabindex="-1"
+  />
+</div>
+
+@code {
+  [Parameter] public string Placeholder { get; set; } = string.Empty;
+  [CascadingParameter] public SelectBase<TSelectItem, TSelectType> Parent { get; set; } = null!;
+
+  private Timer DebounceTimer { get; set; } = null!;
+  private const int DebounceDelay = 250;
+
+  private void OnInputChanged()
+  {
+    DebounceTimer.Stop();
+    DebounceTimer.Start();
+  }
+
+  protected override void OnInitialized()
+  {
+    DebounceTimer = new(DebounceDelay);
+    DebounceTimer.Elapsed += async (_, _) =>
+    {
+      DebounceTimer.Stop();
+      await InvokeAsync(OnSearchingStringChanged);
+    };
+    DebounceTimer.AutoReset = false;
+  }
+
+  private void OnSearchingStringChanged() => Parent.SetSearchingValue(Parent.SearchString);
+}

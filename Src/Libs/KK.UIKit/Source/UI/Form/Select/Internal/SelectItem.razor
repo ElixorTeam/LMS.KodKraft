@@ -1,0 +1,71 @@
+@namespace KK.UIKit.UI.Internal
+@typeparam TSelectItem
+@typeparam TSelectType
+@implements IDisposable
+@using Blazor.Heroicons.Outline
+
+@if (IsInFilter)
+{
+    <li>
+        <button
+            @ref="_buttonRef"
+            type="button"
+            @attributes="AdditionalAttributes"
+            @onclick="@(_ => Parent.SetValue(Item))"
+            @onkeydown="HandleKeyDown"
+            class="@Css.Class(Tw.Disabled, BaseClasses, Class)"
+        >
+            <CheckIcon class="@Css.Class("mr-2 size-4 shrink-0", IsActive ? "visible" : "invisible")" />
+            <span class="truncate">
+                @Parent.ItemDisplayName(Item)
+            </span>
+        </button>
+    </li>
+}
+
+@code {
+    [CascadingParameter] public SelectBase<TSelectItem, TSelectType> Parent { get; set; } = null!;
+    [Parameter, EditorRequired] public TSelectItem Item { get; set; } = default!;
+
+    [Parameter] public string Class { get; set; } = string.Empty;
+    [Parameter(CaptureUnmatchedValues = true)] public Dictionary<string, object> AdditionalAttributes { get; set; } = new();
+
+    public readonly Guid Id = Guid.NewGuid();
+    private ElementReference _buttonRef;
+
+    private static string BaseClasses =>
+        "relative w-full flex items-center rounded-sm px-2 py-1.5 text-sm " +
+        "outline-none transition-colors truncate hover:bg-accent focus:bg-accent/[.5]";
+
+    private bool IsActive =>
+        Parent.IsItemSelected(Item);
+
+    private bool IsInFilter =>
+        Parent.ItemDisplayName(Item).Contains(Parent.SearchString);
+
+    protected override void OnInitialized() =>
+        Parent.Register(this);
+
+    public async Task TryFocusAsync()
+    {
+        try
+        {
+            await _buttonRef.FocusAsync();
+        }
+        catch
+        {
+            // ignore focus errors (element may be disposed)
+        }
+    }
+
+    private Task HandleKeyDown(KeyboardEventArgs e) =>
+      e.Key switch
+      {
+          "ArrowDown" => Parent.FocusNextItemAsync(Id),
+          "ArrowUp"   => Parent.FocusPreviousItemAsync(Id),
+          _           => Task.CompletedTask
+      };
+
+    public void Dispose() =>
+        Parent.Unregister(this);
+}

@@ -1,0 +1,25 @@
+@namespace KK.UIKit.UI.Internal
+@typeparam TSelectItem
+@typeparam TSelectType where TSelectType : ISet<TSelectItem>
+@attribute [CascadingTypeParameter(nameof(TSelectItem))]
+@attribute [CascadingTypeParameter(nameof(TSelectType))]
+@inherits SelectBase<TSelectItem, TSelectType>
+
+<CascadingValue Value="this">
+  @ChildContent
+</CascadingValue>
+
+@code {
+  [Parameter] public RenderFragment? ChildContent { get; set; }
+
+  internal protected override async Task SetValue(TSelectItem item, bool withClose = true)
+  {
+    if (Value != null && !Value.Add(item)) Value.Remove(item);
+    await TriggerValueChanged();
+    if (!withClose) return;
+    IsDropdownOpened = false;
+    Reset();
+  }
+
+  internal protected override bool IsItemSelected(TSelectItem item) => Value != null && Value.Contains(item);
+}
