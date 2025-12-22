@@ -1,0 +1,23 @@
+﻿@using Blazor.Heroicons.Solid
+@using KK.UIKit.Client.Source.Shared.Constants
+@attribute [Route($"{Urls.Home}")]
+
+<div id="welcome" class="h-[70vh] flex items-center justify-center">
+  <div class="flex flex-col items-center max-sm md:max-w-md lg:max-w-2xl">
+    <div>
+      <KkBadge Variant="@BadgeVariant.Outline" Class="mb-3">
+        <BoltIcon class="size-3.5 mr-1.5" />
+        KKComponent for Blazor
+      </KkBadge>
+    </div>
+    <h2 class="text-center text-2xl font-medium tracking-tighter md:text-4xl lg:text-6xl">
+      Powered by Elixor
+    </h2>
+    <div class="flex flex-col gap-3 w-fit mt-9 md:flex-row">
+      <KkButton Link="https://github.com/ElixorTeam/LMS.KodKraft" Variant="@BtnVariant.Outline" class="rounded-full">
+        <CodeBracketIcon class="mr-2 size-[1.1rem]" />
+        Github
+      </KkButton>
+    </div>
+  </div>
+</div>

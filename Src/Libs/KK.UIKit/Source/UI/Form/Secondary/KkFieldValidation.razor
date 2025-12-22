@@ -1,0 +1,14 @@
+@using System.Linq.Expressions
+
+@typeparam TValue
+@inherits KkComponentBase
+@namespace KK.UIKit.UI
+
+<ValidationMessage For="@For" class="@ClassMerge("text-sm font-medium text-destructive", Class)" />
+
+@code {
+  /// <summary>
+  /// The expression representing the field or property to validate.
+  /// </summary>
+  [Parameter] public Expression<Func<TValue>>? For { get; set; }
+}

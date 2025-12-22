@@ -1,0 +1,48 @@
+@namespace KK.UIKit.UI
+
+<CascadingValue Value="this">
+  @ChildContent
+</CascadingValue>
+
+@code {
+  /// <summary>
+  /// The content to be rendered inside the component.
+  /// </summary>
+  /// <remark>
+  /// Expect to see Tab components
+  /// </remark>
+  [Parameter] public RenderFragment? ChildContent { get; set; }
+  [Parameter] public string? DefaultTab { get; set; }
+  [Parameter] public string ActiveTabId { get; set; } = string.Empty;
+  [Parameter] public EventCallback<string> ActiveTabIdChanged { get; set; }
+
+  private List<KkTabItem> TabsList { get; } = [];
+
+  protected override async Task OnInitializedAsync()
+  {
+    if (!string.IsNullOrWhiteSpace(DefaultTab))
+      await ChangeActiveTabId(DefaultTab);
+  }
+
+  internal async Task RegisterTab(KkTabItem kkTabItem)
+  {
+    if (!TabsList.Contains(kkTabItem))
+      TabsList.Add(kkTabItem);
+    if (string.IsNullOrWhiteSpace(ActiveTabId))
+      await ChangeActiveTabId(kkTabItem.Id);
+  }
+
+  internal void UnregisterTab(KkTabItem kkTabItem)
+  {
+    if (TabsList.Contains(kkTabItem))
+      TabsList.Remove(kkTabItem);
+  }
+
+  private async Task ChangeActiveTabId(string newActiveTabId)
+  {
+    ActiveTabId = newActiveTabId;
+    await ActiveTabIdChanged.InvokeAsync(ActiveTabId);
+  }
+
+  public void ChangeTab(string id) => ActiveTabId = id;
+}

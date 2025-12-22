@@ -1,0 +1,32 @@
+﻿@using KK.UIKit.Client.Source.Shared.Constants
+@using KK.UIKit.Client.Source.Shared.UI.View
+@attribute [Route($"{Urls.Other}")]
+
+<ViewHeader Title="Other" />
+
+<div class="flex gap-12">
+  <div class="flex-1">
+    <h2 class="text-lg mb-4">Separator (Horizontal)</h2>
+    <div class="flex flex-col gap-2">
+      <div class="text-sm">Block 1</div>
+      <KkSeparator />
+      <div class="text-sm">Block 2</div>
+      <KkSeparator />
+      <div class="text-sm">Block 3</div>
+      <KkSeparator />
+    </div>
+  </div>
+  <div class="flex-1 flex-col items-center justify-center">
+    <h2 class="text-lg mb-4">Separator (Vertical)</h2>
+    <div class="flex gap-2">
+      <div class="text-sm">Block 1</div>
+      <KkSeparator Vertical />
+      <div class="text-sm">Block 2</div>
+      <KkSeparator Vertical />
+      <div class="text-sm">Block 3</div>
+    </div>
+  </div>
+</div>
+
+<h1 class="text-2xl font-bold mt-8 mb-4">Skeleton Example</h1>
+<KkSkeleton class="h-50 w-50" />

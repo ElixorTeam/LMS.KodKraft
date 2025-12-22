@@ -1,0 +1,25 @@
+@implements IDisposable
+@namespace KK.UIKit.UI
+
+@if (Control.ActiveTabId == Id)
+{
+  @ChildContent
+}
+
+@code {
+  [CascadingParameter] private KkTabWrapper Control { get; set; } = null!;
+
+  /// <summary>
+  /// Required value to identify tab in tabs
+  /// </summary>
+  [Parameter, EditorRequired] public string Id { get; set; } = string.Empty;
+
+  /// <summary>
+  /// The content to be rendered inside the component.
+  /// </summary>
+  [Parameter] public RenderFragment? ChildContent { get; set; }
+
+  protected override async Task OnInitializedAsync() => await Control.RegisterTab(this);
+
+  public void Dispose() => Control.UnregisterTab(this);
+}

@@ -1,0 +1,20 @@
+@inherits InputBase<bool>
+@namespace KK.UIKit.UI
+
+<FluentCheckbox
+  AdditionalAttributes="AdditionalAttributes"
+  @bind-Value="Value"
+  @bind-Value:after="OnValueChanged"
+  Class="@Css.Class("[&::part(control)]:border-transparent", Class)"
+  Label="@Label"
+  Autofocus="@AutoFocus"
+  Disabled="Disabled"
+  ReadOnly="ReadOnly"
+/>
+
+@code {
+  /// <summary>
+  /// The text label displayed.
+  /// </summary>
+  [Parameter] public string? Label { get; set; }
+}

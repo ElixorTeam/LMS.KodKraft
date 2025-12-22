@@ -1,0 +1,13 @@
+﻿@using KK.UIKit.Client.Source.Shared.Constants
+@using KK.UIKit.Client.Source.Shared.UI.View
+@attribute [Route($"{Urls.Badge}")]
+
+<ViewHeader Title="Badge" />
+
+<h1>Variants</h1>
+<div class="flex gap-1 mt-2 ">
+  @foreach (BadgeVariant variant in Enum.GetValues<BadgeVariant>())
+  {
+    <KkBadge Variant="variant">@variant.GetDescription()</KkBadge>
+  }
+</div>

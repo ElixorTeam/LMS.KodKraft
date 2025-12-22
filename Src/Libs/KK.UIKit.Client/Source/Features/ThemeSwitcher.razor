@@ -1,0 +1,16 @@
+﻿@using Blazor.Heroicons.Outline
+
+<KkButton
+  Variant="@BtnVariant.Ghost"
+  Size="@BtnSize.Icon"
+  OnClick="@ToggleTheme"
+>
+  <SunIcon class="size-6 dark:hidden"/>
+  <MoonIcon class="size-6 hidden dark:block"/>
+</KkButton>
+
+@code {
+  [Inject] private IJSRuntime JsRuntime { get; set; } = null!;
+
+  private async Task ToggleTheme() => await JsRuntime.InvokeVoidAsync("toggleTheme");
+}

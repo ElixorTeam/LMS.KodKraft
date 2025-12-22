@@ -1,0 +1,99 @@
+﻿@inherits KkComponentBase
+@namespace KK.UIKit.UI
+
+@if (string.IsNullOrWhiteSpace(Link))
+{
+  <button
+    @attributes="AdditionalAttributes"
+    id="@Id"
+    class="@ButtonClasses"
+    type="@HtmlType"
+    onclick="@OnClick"
+    disabled="@Disabled"
+  >
+    @ChildContent
+  </button>
+}
+else
+{
+  <a
+    @attributes="AdditionalAttributes"
+    id="@Id"
+    href="@Link"
+    class="@ButtonClasses"
+  >
+    @ChildContent
+  </a>
+}
+
+@code {
+  /// <summary>
+  /// The content to be rendered inside the component.
+  /// </summary>
+  [Parameter] public RenderFragment? ChildContent { get; set; }
+
+  /// <summary>
+  /// Defines the visual style of the button.
+  /// </summary>
+  [Parameter] public BtnVariant Variant { get; set; } = BtnVariant.Default;
+
+  /// <summary>
+  /// Defines the size of the button.
+  /// </summary>
+  [Parameter] public BtnSize Size { get; set; } = BtnSize.Default;
+
+  /// <summary>
+  /// Defines the HTML type attribute for the button element.
+  /// </summary>
+  [Parameter] public BtnType Type { get; set; } = BtnType.Button;
+
+  /// <summary>
+  /// Callback executed when the user clicks on trigger.
+  /// </summary>
+  [Parameter] public EventCallback OnClick { get; set; }
+
+  /// <summary>
+  /// Indicates whether the trigger is disabled, preventing user interaction.
+  /// </summary>
+  [Parameter] public bool Disabled { get; set; }
+
+  /// <summary>
+  /// The URL the hyperlink references.
+  /// </summary>
+  /// <remarks>
+  /// When this property is set, the button is transformed into a hyperlink.
+  /// </remarks>
+  [Parameter] public string Link { get; set; } = string.Empty;
+
+  private string ButtonClasses => ClassMerge(Tw.FocusVisible, BaseClasses, VariantClasses, SizeClasses, Class);
+
+  private static string BaseClasses => "inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors disabled:pointer-events-none disabled:opacity-10 select-none";
+
+  private string VariantClasses => Variant switch
+  {
+    BtnVariant.Default => "bg-primary text-primary-foreground hover:bg-primary/90",
+    BtnVariant.Secondary => "bg-secondary text-secondary-foreground hover:bg-secondary/80",
+    BtnVariant.Destructive => "bg-destructive text-destructive-foreground hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60",
+    BtnVariant.Outline => "border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50",
+    BtnVariant.Ghost => "hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50",
+    BtnVariant.Link => "text-primary underline-offset-4 hover:underline",
+    _ => string.Empty
+  };
+
+  private string SizeClasses => Size switch
+  {
+    BtnSize.Default => "h-9 px-4 py-2",
+    BtnSize.Sm => "h-8 rounded-md px-3 text-xs",
+    BtnSize.Lg => "h-10 rounded-md px-8",
+    BtnSize.Icon => "h-9 w-9",
+    BtnSize.Full => "size-full",
+    _ => string.Empty
+  };
+
+  private string HtmlType => Type switch
+  {
+    BtnType.Reset => "reset",
+    BtnType.Submit => "submit",
+    _ => "button"
+  };
+}

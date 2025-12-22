@@ -1,0 +1,13 @@
+@inherits InputBase<bool>
+@namespace KK.UIKit.UI
+
+<FluentSwitch
+  AdditionalAttributes="@AdditionalAttributes"
+  Id="@Id"
+  @bind-Value="Value"
+  @bind-Value:after="OnValueChanged"
+  Class="@Css.Class("[&::part(switch)]:border-transparent", Class)"
+  Autofocus="AutoFocus"
+  ReadOnly="ReadOnly"
+  Disabled="Disabled"
+/>

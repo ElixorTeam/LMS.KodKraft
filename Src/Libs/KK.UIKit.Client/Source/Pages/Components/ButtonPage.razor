@@ -1,0 +1,34 @@
+﻿@using KK.UIKit.Client.Source.Shared.Constants
+@using KK.UIKit.Client.Source.Shared.UI.View
+@attribute [Route($"{Urls.Button}")]
+
+<ViewHeader Title="Button" />
+
+<div class="max-w-4xl mx-auto space-y-12">
+
+  <section class="space-y-4">
+    <h2 class="text-xl font-semibold">Variants</h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      @foreach (BtnVariant variant in Enum.GetValues<BtnVariant>())
+      {
+        <div class="border rounded-lg p-4 flex flex-col gap-3">
+          <div class="flex gap-2">
+            <KkButton Variant="variant" class="flex-1">@variant.GetDescription()</KkButton>
+            <KkButton Variant="variant" Disabled class="flex-1">Disabled</KkButton>
+          </div>
+        </div>
+      }
+    </div>
+  </section>
+
+  <section class="space-y-4 w-full px-4">
+    <h2 class="text-xl font-semibold">Sizes</h2>
+    <div class="flex w-full justify-start items-center gap-2">
+      @foreach (BtnSize size in Enum.GetValues<BtnSize>())
+      {
+        <KkButton Size="size">@size.GetDescription()</KkButton>
+      }
+    </div>
+  </section>
+</div>

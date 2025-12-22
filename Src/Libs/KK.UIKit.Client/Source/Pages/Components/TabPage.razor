@@ -1,0 +1,63 @@
+﻿@using KK.UIKit.Client.Source.Shared.Constants
+@using KK.UIKit.Source.Helper
+@using KK.UIKit.Client.Source.Shared.UI.View
+@attribute [Route($"{Urls.Tab}")]
+
+<ViewHeader Title="Tab" />
+
+<div class="flex gap-2 mb-4">
+  @foreach (string tab in _tabs)
+  {
+    <KkButton Variant="BtnVariant.Link"
+            Disabled="@(CurrentTab == tab)"
+            OnClick="@(() => LinkTab(tab))">
+      @tab.Capitalize()
+    </KkButton>
+  }
+</div>
+
+<div class="mt-4 flex items-center gap-2">
+  <KkBadge Variant="BadgeVariant.Default">Current tab:</KkBadge>
+  <span class="font-semibold text-sm">
+    @CurrentTab.Capitalize()
+  </span>
+</div>
+
+<div class="flex items-center gap-2 mt-2">
+  <KkBadge Variant="BadgeVariant.Destructive">Current URL:</KkBadge>
+  <span class="font-mono text-xs break-all">
+    @NavigationManager.Uri
+  </span>
+</div>
+
+<KkTabWrapper @bind-ActiveTabId="@CurrentTab">
+  @foreach (string tab in _tabs)
+  {
+    <KkTabItem Id="@tab">
+      <div class="mt-2 rounded-lg shadow-sm border text-sm leading-relaxed">
+        This is the <span class="font-medium">@tab</span> content section.
+      </div>
+    </KkTabItem>
+  }
+</KkTabWrapper>
+
+@code {
+  [Inject] private PageHelper PageHelper { get; set; } = null!;
+  [Inject] private NavigationManager NavigationManager { get; set; } = null!;
+
+  private string CurrentTab { get; set; } = string.Empty;
+
+  private readonly List<string> _tabs = ["info", "test", "data", "label"];
+
+  protected override void OnInitialized()
+  {
+    CurrentTab = PageHelper.GetUrlQueryParam("tab") ?? "info";
+  }
+
+  private void LinkTab(string tabId)
+  {
+    CurrentTab = tabId;
+    string uri = NavigationManager.GetUriWithQueryParameter("tab", CurrentTab);
+    NavigationManager.NavigateTo(uri, false, true);
+  }
+}

@@ -1,0 +1,102 @@
+@typeparam TType where TType: System.Numerics.INumber<TType>
+@inherits InputBase<TType>
+@namespace KK.UIKit.UI
+
+<input
+  id="@Id"
+  type="number"
+  inputmode="numeric"
+  @attributes="AdditionalAttributes"
+  @bind="InputValue"
+  class="@ClassMerge(BaseClass, Class)"
+  disabled="@Disabled"
+  readonly="@ReadOnly"
+  autofocus="@AutoFocus"
+  placeholder="@Placeholder"
+  step="@FormatWithCulture(Step)"
+  min="@FormatWithCulture(Min)"
+  max="@FormatWithCulture(Max)"
+/>
+
+@code {
+  /// <summary>
+  /// Minimum value for the input. If set, the value will not go below this threshold.
+  /// </summary>
+  [Parameter] public TType? Min { get; set; }
+
+  /// <summary>
+  /// Maximum value for the input. If set, the value will not exceed this threshold.
+  /// </summary>
+  [Parameter] public TType? Max { get; set; }
+
+  /// <summary>
+  /// The step value for the input. This defines the increment/decrement step for numeric values.
+  /// </summary>
+  [Parameter] public TType Step { get; set; } = TType.One;
+
+  /// <summary>
+  /// The culture to use for formatting the input value.
+  /// </summary>
+  [Parameter] public CultureInfo Culture { get; set; } = CultureInfo.InvariantCulture;
+
+  const string BaseClass =
+    // Placeholder, selection, theme
+    "placeholder:text-muted-foreground selection:bg-primary selection:text-primary-foreground dark:bg-input/30 " +
+    // Border, background, shape, size
+    "border-input border rounded-md h-9 w-full min-w-0 bg-transparent px-3 py-1 " +
+    // Typography
+    "text-base md:text-sm " +
+    // Shadow, transition, outline
+    "shadow-xs transition-[color,box-shadow] outline-none " +
+    // Disabled state
+    "disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 " +
+    // Focus ring
+    "focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px]";
+
+  private string InputValue
+  {
+    get
+    {
+      if (Value is IFormattable formattable)
+        return formattable.ToString(null, Culture);
+      return Value?.ToString() ?? string.Empty;
+    }
+    set
+    {
+      if (!TryConvertValue(value, out TType result)) return;
+
+
+      result = Min != null ? TType.Max(Min, result) : result;
+      result = Max != null ? TType.Min(Max, result) : result;
+
+      Value = result;
+      ValueChanged.InvokeAsync(Value);
+    }
+  }
+
+  private bool TryConvertValue(string value, out TType result)
+  {
+    result = default!;
+
+    if (string.IsNullOrWhiteSpace(value))
+      return false;
+
+    try
+    {
+      result = TType.Parse(value, Culture);
+      return true;
+    }
+    catch
+    {
+      return false;
+    }
+  }
+
+  private string FormatWithCulture(TType? value)
+  {
+    if (value == null) return string.Empty;
+    if (value is IFormattable formattable)
+      return formattable.ToString(null, Culture);
+    return value.ToString()!;
+  }
+}

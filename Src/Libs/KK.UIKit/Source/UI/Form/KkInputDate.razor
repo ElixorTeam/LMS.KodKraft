@@ -1,0 +1,14 @@
+@inherits InputBase<DateTime?>
+@namespace KK.UIKit.UI
+
+<FluentDatePicker
+  AdditionalAttributes="AdditionalAttributes"
+  Id="@Id"
+  @bind-Value="Value"
+  @bind-Value:after="OnValueChanged"
+  Class="@Css.Class("[&::part(control)]:!pl-3 [&::part(root)]:!bg-background [&::part(root)]:!border-input [&::part(root)]:!h-9 [&::part(root)]:!rounded-md", Class)"
+  Disabled="Disabled"
+  Autofocus="AutoFocus"
+  Placeholder="@Placeholder"
+  ReadOnly="ReadOnly"
+/>

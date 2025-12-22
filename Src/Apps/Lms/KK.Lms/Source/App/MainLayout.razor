@@ -1,0 +1,17 @@
+﻿@using KK.LMS.Source.Widgets.Sidebar
+@using Microsoft.FluentUI.AspNetCore.Components
+
+@inherits LayoutComponentBase
+
+<div class="w-full min-h-screen">
+  <div class="w-full grid grid-rows-[auto,1fr]">
+    <Sidebar />
+    <main class="size-full overflow-x-hidden p-6">
+      @Body
+    </main>
+  </div>
+</div>
+
+<FluentDialogProvider />
+<FluentToastProvider />
+<FluentTooltipProvider />

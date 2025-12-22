@@ -1,0 +1,60 @@
+﻿@using KK.UIKit.Client.Source.Shared.Constants
+@using KK.UIKit.Client.Source.Shared.UI.View
+@attribute [Route($"{Urls.Bool}")]
+
+<ViewHeader Title="Boolean Fields" />
+
+
+<div class="max-w-4xl mx-auto space-y-10">
+
+  <section class="space-y-4">
+    <h2 class="text-xl font-semibold">@nameof(KkSwitch)</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="space-y-1">
+        <p class="text-sm text-muted-foreground">Default</p>
+        <KkSwitch @bind-Value="@_switchValue"/>
+      </div>
+
+      <div class="space-y-1">
+        <p class="text-sm text-muted-foreground">ReadOnly</p>
+        <KkSwitch Value="@false" ReadOnly />
+        <KkSwitch Value="@true" ReadOnly />
+      </div>
+
+      <div class="space-y-1">
+        <p class="text-sm text-muted-foreground">Disabled</p>
+        <KkSwitch Value="@false" Disabled />
+        <KkSwitch Value="@true" Disabled />
+      </div>
+    </div>
+  </section>
+
+  <div class="max-w-4xl mx-auto space-y-10">
+    <section class="space-y-4">
+      <h2 class="text-xl font-semibold">@nameof(KkCheckbox)</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="space-y-1">
+          <p class="text-sm text-muted-foreground">Default</p>
+          <KkCheckbox @bind-Value="@_switchValue" />
+        </div>
+
+        <div class="space-y-1">
+          <p class="text-sm text-muted-foreground">ReadOnly</p>
+          <KkCheckbox Value="@false" ReadOnly />
+          <KkCheckbox Value="@true" ReadOnly />
+        </div>
+
+        <div class="space-y-1">
+          <p class="text-sm text-muted-foreground">Disabled</p>
+          <KkCheckbox Value="@false" Disabled />
+          <KkCheckbox Value="@true" Disabled />
+        </div>
+      </div>
+    </section>
+  </div>
+
+</div>
+
+@code {
+  bool _switchValue;
+}

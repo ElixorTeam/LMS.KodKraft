@@ -1,0 +1,17 @@
+<Solution>
+  <Folder Name="/Apps/">
+    <Project Path="Src/Apps/Lms/KK.LMS.Shared/KK.LMS.Shared.csproj" />
+    <Project Path="Src/Apps/Lms/KK.LMS/KK.LMS.csproj" />
+  </Folder>
+  <Folder Name="/Libs/">
+    <Project Path="Src/Libs/KK.Shared/KK.Shared.csproj" />
+  </Folder>
+  <Folder Name="/Libs/UIKit/">
+    <Project Path="Src/Libs/KK.UIKit.Client/KK.UIKit.Client.csproj" />
+    <Project Path="Src/Libs/KK.UIKit/KK.UIKit.csproj" />
+  </Folder>
+  <Folder Name="/Tests/">
+    <Project Path="Src/Tests/KK.Architecture.Tests/KK.Architecture.Tests.csproj" />
+    <Project Path="Src/Tests/KK.Components.Tests/KK.Components.Tests.csproj" />
+  </Folder>
+</Solution>

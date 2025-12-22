@@ -1,0 +1,22 @@
+@using KK.UIKit.Client.Source.Shared.Constants
+@using KK.UIKit.Client.Source.Shared.UI.View
+@attribute [Route($"{Urls.Accordion}")]
+
+<ViewHeader Title="Accordion" />
+
+<div class="flex flex-col w-80">
+  <KkAccordion Label="Visible (Default): False">
+    <div>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    </div>
+  </KkAccordion>
+  <KkAccordion Label="Visible: True" Visible>
+    <div>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    </div>
+  </KkAccordion>
+</div>
