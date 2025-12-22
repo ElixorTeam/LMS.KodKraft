@@ -1,5 +1,4 @@
 ﻿@using LMS.Components.Client.Source.Shared.UI.View
-@using LMS.Components.Source.UI.Form
 @attribute [Route($"{Urls.Input}")]
 
 <ViewHeader Title="Input fields" />
@@ -73,11 +72,32 @@
       </div>
     </div>
   </section>
+
+  @* <section class="space-y-4"> *@
+  @*   <h2 class="text-xl font-semibold">@nameof(InputDateField)</h2> *@
+  @*   <div class="grid grid-cols-1 md:grid-cols-3 gap-4"> *@
+  @*     <div class="space-y-2"> *@
+  @*       <p class="text-sm text-muted-foreground">Default</p> *@
+  @*       <InputDateField @bind-Value="@_inputDateValue" Placeholder="Время" /> *@
+  @*     </div> *@
+  @* *@
+  @*     <div class="space-y-2"> *@
+  @*       <p class="text-sm text-muted-foreground">ReadOnly</p> *@
+  @*       <InputDateField  @bind-Value="@_inputDateValue" Placeholder="ReadOnly" ReadOnly /> *@
+  @*     </div> *@
+  @* *@
+  @*     <div class="space-y-2"> *@
+  @*       <p class="text-sm text-muted-foreground">Disabled</p> *@
+  @*       <InputDateField @bind-Value="@_inputDateValue" Placeholder="Disabled" Disabled /> *@
+  @*     </div> *@
+  @*   </div> *@
+  @* </section> *@
 </div>
 
 @code {
   int _inputIntValue;
   decimal _inputDecimalValue;
+  DateTime? _inputDateValue;
   string _inputTextValue = string.Empty;
   string _inputAreaValue = string.Empty;
 }

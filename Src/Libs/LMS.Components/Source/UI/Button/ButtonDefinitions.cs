@@ -1,4 +1,5 @@
-﻿namespace LMS.Components.Source.UI.Button;
+﻿// ReSharper disable once CheckNamespace
+namespace LMS.Components.UI;
 
 public enum BtnKind
 {

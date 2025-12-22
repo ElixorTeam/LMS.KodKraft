@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Components;
 
 // ReSharper disable once CheckNamespace
-namespace LMS.Components.Source.UI.Form;
+namespace LMS.Components.UI;
 
 public abstract class InputBase<TValue> : LmsComponentBase
 {

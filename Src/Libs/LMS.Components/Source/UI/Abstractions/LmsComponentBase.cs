@@ -2,7 +2,7 @@
 using TailwindMerge;
 
 // ReSharper disable once CheckNamespace
-namespace LMS.Components.Source.UI;
+namespace LMS.Components.UI;
 
 public abstract class LmsComponentBase : ComponentBase
 {

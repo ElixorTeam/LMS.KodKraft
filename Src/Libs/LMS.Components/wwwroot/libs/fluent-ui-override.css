@@ -62,3 +62,7 @@ fluent-checkbox {
 .fluent-tooltip-provider fluent-tooltip::part(tooltip) {
   @apply bg-foreground text-background px-3 py-1.5 rounded-md text-xs after:hidden;
 }
+
+/*fluent-anchored-region {*/
+/*  @apply !fixed*/
+/*}*/
